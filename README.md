@@ -16,5 +16,5 @@
 
 <p><b>Demo</b> is here: http://www.phpbb-seo.ir/demo/Mobbern/index.php </p>
 
-<p><img src="http://www.phpbb-seo.ir/demo/Mobbern/donation.png"><b>Donate me</b> by buying <b>Global Steam Wallet</b> code for me Here:  https://dundle.com/steam/ and send the code to this email <b>"meis6m@gmail.com"</b></p>
+<p><img src="http://www.phpbb-seo.ir/demo/Mobbern/donation.png" width="30px" height="30px"><b>Donate me</b> by buying <b>Global Steam Wallet</b> code for me Here:  https://dundle.com/steam/ and send the code to this email <b>"meis6m@gmail.com"</b></p>
 
