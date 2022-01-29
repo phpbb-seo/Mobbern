@@ -10,4 +10,10 @@
 </ul>
 <p>5 Headers &amp; Footers </p>
 <p>5 Color Themes Custom Color Themes &amp; Infinitie colors</p>
-<p>&nbsp;(Including Style folder , Extension Folder, Document folder )</p>
+<p>&nbsp;(Including Style folder , Extension Folder )</p>
+
+<p>Document is here: https://phpbb-seo.github.io/Documentation/index.html </p>
+
+<p>Demo is here: http://www.phpbb-seo.ir/demo/Mobbern/index.php </p>
+
+<p>Donate me by buying Global Steam Wallet code for me Here:  https://dundle.com/steam/ and send the code to this email "meis6m@gmail.com</p>
