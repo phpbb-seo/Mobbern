@@ -1,5 +1,5 @@
 # Mobbern
-<p>phpBB3 Responsive Theme with Material Design</p>
+<p>phpBB (3.3.6) Responsive Theme with Material Design</p>
 <ul style="list-style-type: square;">
 <li>Theme Control Panel</li>
 <li>100% Responsive ( Bootstrap 3 )</li>
@@ -12,7 +12,7 @@
 <p>5 Color Themes Custom Color Themes &amp; Infinitie colors</p>
 <p>&nbsp;(Including Style folder , Extension Folder )</p>
 
-<p><b>Document</b> is here: https://phpbb-seo.github.io/Documentation/index.html </p>
+<p><b>Document</b> is here: (How you can install) https://phpbb-seo.github.io/Documentation/index.html </p>
 
 <p><b>Demo</b> is here: http://www.phpbb-seo.ir/demo/Mobbern/index.php </p>
 
