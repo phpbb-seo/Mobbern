@@ -1,0 +1,1071 @@
+<!-- IF U_ACP -->
+<!-- DEFINE THEME_CP = 1 -->
+<!-- INCLUDE overall_header.html -->
+<link href="{T_THEME_PATH}/mobbern-theme-cp.css" rel="stylesheet" type="text/css" property="stylesheet" />
+
+<h2>Theme Control Panel</h2>
+
+<div class="theme-cp cp-container sidebar-block tabs-panel">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="#settings-general" role="tab" data-toggle="tab"><i class="fa fa-cog"></i> General</a></li>
+    <li><a href="#settings-design" role="tab" data-toggle="tab"><i class="fa fa-cube"></i> Design</a></li>
+    <li><a href="#settings-menu" role="tab" data-toggle="tab"><i class="fa fa-th-list"></i> Menu</a></li>
+    <li><a href="#settings-widgets" role="tab" data-toggle="tab"><i class="fa fa-th-large"></i> Sidebar Widgets</a></li>
+    <li><a href="#settings-ads" role="tab" data-toggle="tab"><i class="fa fa-bell"></i> Ads</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+
+<!--
+
+GENERAL SETTINGS :
+
+ -->
+
+    <div class="tab-pane fade active in" id="settings-general">
+    <form id="theme-cp-general" action="mobbern-tcp/settings" method="post">
+      <h2>General Settings</h2>
+      <div class="row">
+
+      <div class="col-md-6 panel">
+      <div id="scroll-opts" class="panel">
+        <div class="panel-heading">
+        <h3><i class="fa fa-arrows-v"></i> Scroll Options</h3>
+        </div>
+        <div class="panel-body">
+        <p>Adjust scrollbar and scroll effects.</p>
+
+        <dl class="option">
+          <dt>Custom Scrollbar<p>Enable/Disable the Custom Scrollbar (jQuery NiceScroll)</p></dt>
+          <dd>
+            <input type="radio" id="set_scrollCustom_1" name="mbrn_scrollCustom" value="1"
+            <!-- IF MBRN_SCROLL_CUSTOM -->checked="checked"<!-- ENDIF --> />
+            <label for="set_scrollCustom_1">Enable</label>
+
+            <input type="radio" id="set_scrollCustom_0" name="mbrn_scrollCustom" value="0"
+            <!-- IF not MBRN_SCROLL_CUSTOM -->checked="checked"<!-- ENDIF --> />
+            <label for="set_scrollCustom_0">Disable</label>
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>Smooth Scroll Effect<p>Enable/Disable the Smooth Scroll Effect <strong>for Custom Scrollbar</strong></p></dt>
+          <dd>
+            <input type="radio" id="set_scrollSmooth_1" name="mbrn_scrollSmooth" value="1"
+            <!-- IF MBRN_SCROLL_SMOOTH -->checked="checked"<!-- ENDIF --> />
+            <label for="set_scrollSmooth_1">Enable</label>
+
+            <input type="radio" id="set_scrollSmooth_0" name="mbrn_scrollSmooth" value="0"
+            <!-- IF not MBRN_SCROLL_SMOOTH -->checked="checked"<!-- ENDIF --> />
+            <label for="set_scrollSmooth_0">Disable</label>
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>Auto Scrolling Effect<p>Enable/Disable the Body Auto Scrolling Effect (active when the fixed navbar is toggled)</p></dt>
+          <dd>
+            <input type="radio" id="set_scrollAuto_1" name="mbrn_scrollAuto" value="1"
+            <!-- IF MBRN_SCROLL_AUTO -->checked="checked"<!-- ENDIF --> />
+            <label for="set_scrollAuto_1">Enable</label>
+
+            <input type="radio" id="set_scrollAuto_0" name="mbrn_scrollAuto" value="0"
+            <!-- IF not MBRN_SCROLL_AUTO -->checked="checked"<!-- ENDIF --> />
+            <label for="set_scrollAuto_0">Disable</label>
+          </dd>
+        </dl>
+
+        </div>
+      </div><!-- /#scroll-opts.panel -->
+
+      <div id="favicon-opts" class="panel">
+        <div class="panel-heading">
+        <h3><i class="fa fa-star"></i> Forum Favicon</h3>
+        </div>
+        <div class="panel-body">
+        <p>Customize your forum with a favicon.</p>
+
+        <dl class="option">
+          <dt>
+            <label for="set_favicon">Favicon URL
+              <i>Ex: http://www/icon.ico</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_favicon" name="mbrn_favicon" value="{MBRN_FAVICON}" />
+          </dd>
+        </dl>
+        </div>
+      </div><!-- /#favicon-opts.panel -->
+
+      </div><!-- /.col-md-6 -->
+
+
+      <div id="logo-opts" class="col-md-6 panel">
+        <div class="panel-heading">
+        <h3><i class="fa fa-home"></i> Logo</h3>
+        </div>
+        <div class="panel-body">
+        <p>Customize site logo.</p>
+
+        <dl class="option">
+          <dt>
+            <label for="set_logoText">Logo Text
+              <i>Leave empty to use the site name (set from Administration Control Panel)</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_logoText" name="mbrn_logoText" value="{MBRN_LOGO_TEXT}" />
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_logoFont">Logo Font Family
+              <i>Set logo font (works only for the "Header With Ads" header preset)
+              <br/> <strong>Example: "Open Sans", sans-serif</strong></i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_logoFont" name="mbrn_logoFont" value="{MBRN_LOGO_FONT}" />
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_logoIcon">Logo Icon
+              <i>Set logo (font) icon <a href="http://fortawesome.github.io/Font-Awesome/icons/" title="Font Awesome Icons">
+                <i class="fa fa-external-link-square"></i>
+              </a>
+              <br/> <strong>Example: fa-star</strong></i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_logoIcon" name="mbrn_logoIcon" value="{MBRN_LOGO_ICON}" />
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_logoImg">Logo Image URL
+              <i>Your logo image (<strong>256px x 256px</strong>)
+              <br/> <strong>Example: http://www/logo.png</strong></i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_logoImg" name="mbrn_logoImg" value="{MBRN_LOGO_IMG}" />
+          </dd>
+        </dl>
+
+        </div>
+      </div><!-- /#logo-opts.panel -->
+      </div><!-- /.row -->
+      <div class="row">
+      
+      <div id="footernote-opts" class="panel col-md-12">
+        <div class="panel-heading">
+          <h3><i class="fa fa-copyright"></i> Footer Copyright Note</h3>
+        </div>
+
+        <div class="panel-body">
+        <p>Change the footer copyright info.</p>
+
+        <dl class="option">
+          <dt>
+            <label for="set_footerCopyright">Footer Copyright Text
+              <i>Ex: Copyright 2010 Yourforum.com</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_footerCopyright" name="mbrn_footerCopyright" value="{MBRN_FOOTER_COPYRIGHT}">
+          </dd>
+        </dl>
+        </div>
+      </div><!-- /#footernote-opts.panel -->
+
+      <div id="footersocial-opts" class="panel col-md-12">
+        <div class="panel-heading">
+          <h3><i class="fa fa-share-alt"></i> Footer Social Links</h3>
+        </div>
+
+        <div class="panel-body">
+        <p>Change the Social Links in the Footer</p>
+
+        <dl class="option">
+          <dt>
+            <label for="set_footerFb">Facebook
+              <i>Leave empty to hide icon</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_footerFb" name="mbrn_footerFb" value="{MBRN_FOOTER_FB}">
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_footerGp">Google Plus
+              <i>Leave empty to hide icon</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_footerGp" name="mbrn_footerGp" value="{MBRN_FOOTER_GP}">
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_footerTw">Twitter
+              <i>Leave empty to hide icon</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_footerTw" name="mbrn_footerTw" value="{MBRN_FOOTER_TW}">
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_footerLn">LinkedIn
+              <i>Leave empty to hide icon</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_footerLn" name="mbrn_footerLn" value="{MBRN_FOOTER_LN}">
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_footerPi">Pinterest
+              <i>Leave empty to hide icon</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_footerPi" name="mbrn_footerPi" value="{MBRN_FOOTER_PI}">
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_footerWp">Wordpress (blog)
+              <i>Leave empty to hide icon</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_footerWp" name="mbrn_footerWp" value="{MBRN_FOOTER_WP}">
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_footerYt">Youtube
+              <i>Leave empty to hide icon</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_footerYt" name="mbrn_footerYt" value="{MBRN_FOOTER_YT}">
+          </dd>
+        </dl>
+
+        </div>
+      </div><!-- /#footersocial-opts.panel -->
+
+      </div><!-- /.row -->
+
+      <div class="panel post-buttons">
+        <fieldset class="submit-buttons">
+          <input type="submit" id="submit_general" name="submit_general" value="{L_SUBMIT}" class="button1 default-submit-action" />
+          {S_FORM_TOKEN}
+        </fieldset>
+      </div>
+    </form>
+    </div><!-- /#settings-general -->
+
+<!--
+
+DESIGN SETTINGS :
+
+ -->
+
+    <div class="tab-pane fade" id="settings-design">
+    <form id="theme-cp-design" action="mobbern-tcp/settings" method="post">
+      <h2>Design &amp; Layout Settings</h2>
+
+      <div class="row">
+      <div id="colortheme-opts" class="col-md-6 panel">
+        <div class="panel-heading">
+          <h3><i class="fa fa-paint-brush"></i> Color Theme</h3>
+        </div>
+
+        <div class="panel-body">
+          <p>Customize the site color theme.</p>
+
+        <dl class="option">
+          <dt>
+            <label for="set_colorPreset">Color Theme Preset
+              <i>Choose one of the four preset color themes</i>
+            </label>
+          </dt>
+          <dd>
+            <select id="set_colorPreset" name="mbrn_colorPreset">
+              <option value="azure" <!-- IF MBRN_COLOR_PRESET == "azure" -->selected="selected"<!-- ENDIF -->>Azure</option>
+              <option value="emerald" <!-- IF MBRN_COLOR_PRESET == "emerald" -->selected="selected"<!-- ENDIF -->>Emerald</option>
+              <option value="slate" <!-- IF MBRN_COLOR_PRESET == "slate" -->selected="selected"<!-- ENDIF -->>Slate</option>
+              <option value="tomato" <!-- IF MBRN_COLOR_PRESET == "tomato" -->selected="selected"<!-- ENDIF -->>Tomato</option>
+              <option value="lilac" <!-- IF MBRN_COLOR_PRESET == "lilac" -->selected="selected"<!-- ENDIF -->>Lilac</option>
+            </select>
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>Custom Color Theme<p>Style your forum with a custom color theme - <strong>just pick your favorite color!</strong></p></dt>
+          <dd>
+            <input type="radio" id="set_customColor_enable" name="set_customColor" value="1"
+            <!-- IF MBRN_COLOR_CUSTOM -->checked="checked"<!-- ENDIF --> /><label for="set_customColor_enable">Enable</label>
+            <input type="radio" id="set_customColor_disable" name="set_customColor" value="0"
+            <!-- IF not MBRN_COLOR_CUSTOM -->checked="checked"<!-- ENDIF --> /><label for="set_customColor_disable">Disable</label>
+            <br />
+            <input class="user_color" placeholder="{MBRN_COLOR_CUSTOM}" name="" type="text" value="" disabled="disabled" />
+            <input type="hidden" class="user_color" name="user_color_value" value="" >
+            <input type="hidden" class="user_color" name="mbrn_colorCustom" value="" >
+            <button type="button" id="color_picker" disabled="disabled"></button>
+
+            <div class="float-clear"></div>
+
+            <div class="btn-group btn-group-justified">  
+              <div class="btn-group">
+                <button id="preview_theme" type="button" class="btn btn-default" onClick="previewTheme(color_var, scss_file)">Preview Theme</button>
+              </div>
+              <div class="btn-group">
+                <button id="download_theme" type="button" class="btn btn-default" onClick="downloadThemeCSS(color_var)" disabled="disabled">Download CSS File</button>
+              </div>
+            </div>
+          </dd>
+        </dl>
+        </div>
+      </div><!-- /#colortheme-opts.panel -->
+
+
+      <div id="sitebg-opts" class="col-md-6 panel">
+        <div class="panel-heading">
+          <h3><i class="fa fa-picture-o"></i> Site Background</h3>
+        </div>
+
+        <div class="panel-body">
+        <p>Customize your forum background.</p>
+
+        <dl class="option">
+          <dt>
+            <label for="set_bgImg">Background Image URL
+              <i>Leave empty for no background image
+              <br /> <strong>Will overlap background color!</strong></i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_bgImg" name="mbrn_bgImg" value="{MBRN_BG_IMG}" />
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_bgColor">Background Color
+            <i>Enter color in HEX code<br><strong>Ex: #FFF</strong></i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_bgColor" name="mbrn_bgColor" value="{MBRN_BG_COLOR}" />
+          </dd>
+        </dl>
+        </div>
+      </div><!-- /#sitebg-opt.panel -->
+      </div><!-- /.row -->
+
+      <div class="row">
+
+      <div id="layout-opts" class="col-md-6 panel">
+        <div class="panel-heading">
+          <h3><i class="fa fa-sliders"></i> Layout Options</h3>
+        </div>
+
+        <div class="panel-body">
+          <p>Change site layout.</p>
+
+        <dl class="option">
+          <dt>Full Width Layout<p>Set layout to full width.<strong>Overwrites "Layout Width" Option!</strong></p></dt>
+          <dd>
+            <input type="radio" id="set_layoutFull_1" name="mbrn_layoutFull" value="1"
+            <!-- IF MBRN_LAYOUT_FULL -->checked="checked"<!-- ENDIF --> />
+            <label for="set_layoutFull_1">Enable</label>
+
+            <input type="radio" id="set_layoutFull_0" name="mbrn_layoutFull" value="0"
+            <!-- IF not MBRN_LAYOUT_FULL -->checked="checked"<!-- ENDIF --> />
+            <label for="set_layoutFull_0">Disable</label>
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>Sidebar<p>Enable/Disable the Sidebar.</p></dt>
+          <dd>
+            <input type="radio" id="set_layoutSidebar_1" name="mbrn_layoutSidebar" value="1"
+            <!-- IF MBRN_LAYOUT_SIDEBAR -->checked="checked"<!-- ENDIF --> />
+            <label for="set_layoutSidebar_1">Enable</label>
+
+            <input type="radio" id="set_layoutSidebar_0" name="mbrn_layoutSidebar" value="0"
+            <!-- IF not MBRN_LAYOUT_SIDEBAR -->checked="checked"<!-- ENDIF --> />
+            <label for="set_layoutSidebar_0">Disable</label>
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_layoutWidth">Layout Width
+              <i>Leave empty for default layout width. <strong>Ex1: 980px; Ex2: 80%</strong></i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_layoutWidth" name="mbrn_layoutWidth" value="{MBRN_LAYOUT_WIDTH}" />
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_layoutHeader">Header Preset
+              <i>Choose one of the three header presets</i>
+            </label>
+          </dt>
+          <dd>
+            <select id="set_layoutHeader" name="mbrn_layoutHeader">
+              <option value="transnav" <!-- IF MBRN_LAYOUT_HEADER == "transnav" -->selected="selected"<!-- ENDIF -->>Transparent Navbar</option>
+              <option value="normal" <!-- IF MBRN_LAYOUT_HEADER == "normal" -->selected="selected"<!-- ENDIF -->>Normal Header</option>
+              <option value="big" <!-- IF MBRN_LAYOUT_HEADER == "big" -->selected="selected"<!-- ENDIF -->>Big Header</option>
+              <option value="ads" <!-- IF MBRN_LAYOUT_HEADER == "ads" -->selected="selected"<!-- ENDIF -->>Header with Ads</option>
+              <option value="minimal" <!-- IF MBRN_LAYOUT_HEADER == "minimal" -->selected="selected"<!-- ENDIF -->>Minimal Navbar</option>
+            </select>
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_layoutFooter">Footer Preset
+              <i>Choose one of the three footer presets</i>
+            </label>
+          </dt>
+          <dd>
+            <select id="set_layoutFooter" name="mbrn_layoutFooter">
+              <option value="complex" <!-- IF MBRN_LAYOUT_FOOTER == "complex" -->selected="selected"<!-- ENDIF -->>Complex Footer</option>
+              <option value="iiicolumns" <!-- IF MBRN_LAYOUT_FOOTER == "iiicolumns" -->selected="selected"<!-- ENDIF -->>3 Columns Footer</option>
+              <option value="ivcolumns" <!-- IF MBRN_LAYOUT_FOOTER == "ivcolumns" -->selected="selected"<!-- ENDIF -->>4 Columns Footer</option>
+              <option value="ads" <!-- IF MBRN_LAYOUT_FOOTER == "ads" -->selected="selected"<!-- ENDIF -->>Footer with Ads</option>
+              <option value="minimal" <!-- IF MBRN_LAYOUT_FOOTER == "minimal" -->selected="selected"<!-- ENDIF -->>Minimal</option>
+            </select>
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>Borders<p>Enable/Disable borders sitewide.</p></dt>
+          <dd>
+            <input type="radio" id="set_borders_1" name="mbrn_borders" value="1"
+            <!-- IF MBRN_BORDERS -->checked="checked"<!-- ENDIF --> />
+            <label for="set_borders_1">Enable</label>
+
+            <input type="radio" id="set_borders_0" name="mbrn_borders" value="0"
+            <!-- IF not MBRN_BORDERS -->checked="checked"<!-- ENDIF --> />
+            <label for="set_borders_0">Disable</label>
+          </dd>
+        </dl>
+
+        </div>
+      </div><!-- /#layout-opts.panel -->
+
+      <div id="font-opts" class="panel col-md-6">
+        <div class="panel-heading">
+        <h3><i class="fa fa-font"></i> Site Font Options</h3>
+        </div>
+        <div class="panel-body">
+        <p>Change the fonts and font styles of your forum.</p>
+
+        <dl class="option">
+          <dt>
+            <label for="set_fontUrl">Google URL
+              <i>Ex: http://fonts.googleapis.com/css?family=Lato:400,700</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_fontUrl" name="mbrn_fontUrl" value="{MBRN_FONT_URL}" />
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_fontFamily">Site Font Family:
+              <i>Ex: "Lato", sans-serif</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_fontFamily" name="mbrn_fontFamily" value="{MBRN_FONT_FAMILY}" />
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_fontHeaders">Headers (H1,H2,H3...) Font Family:
+              <i>Ex: "Roboto Slab", serif</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_fontHeaders" name="mbrn_fontHeaders" value="{MBRN_FONT_HEADERS}" />
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_fontSize">Body Font Size:
+              <i>Default font size (starting point) for all text on the website. <br /><strong>Ex: 14px</strong></i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_fontSize" name="mbrn_fontSize" value="{MBRN_FONT_SIZE}" />
+          </dd>
+        </dl>
+
+        </div>
+      </div><!-- /#font-opts.panel -->
+      </div><!-- /.row -->      
+
+
+
+      <div class="panel post-buttons">
+        <fieldset class="submit-buttons">
+          <input type="submit" id="submit_design" name="submit_design" value="{L_SUBMIT}" class="button1 default-submit-action" />
+          {S_FORM_TOKEN}
+        </fieldset>
+      </div>
+    </form>
+    </div><!-- /#settings-design -->
+
+<!--
+
+MENU SETTINGS :
+
+ -->
+
+    <div class="tab-pane fade" id="settings-menu">
+    <form id="theme-cp-menu" action="mobbern-tcp/settings" method="post">
+      <h2>Menu Settings &amp; Customization</h2>
+
+      <div class="row">
+      <div id="menu-opts" class="col-md-6 panel">
+        <div class="panel-heading">
+          <h3><i class="fa fa-list"></i> Menu Options</h3>
+        </div>
+
+        <div class="panel-body">
+          <p>Customize the Menu.</p>
+
+        <dl class="option">
+          <dt>Menu Items Icons<p>Enable/Disable the Icons for menu iems.</p></dt>
+          <dd>
+            <input type="radio" id="set_menuIcons_1" name="mbrn_menuIcons" value="1"
+            <!-- IF MBRN_MENU_ICONS -->checked="checked"<!-- ENDIF --> />
+            <label for="set_menuIcons_1">Enable</label>
+
+            <input type="radio" id="set_menuIcons_0" name="mbrn_menuIcons" value="0"
+            <!-- IF not MBRN_MENU_ICONS -->checked="checked"<!-- ENDIF --> />
+            <label for="set_menuIcons_0">Disable</label>
+
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>Menu Icons Border<p>Enable/Disable the circles around the icons.</p></dt>
+          <dd>
+            <input type="radio" id="set_menuCircles_1" name="mbrn_menuCircles" value="1"
+            <!-- IF MBRN_MENU_CIRCLES -->checked="checked"<!-- ENDIF --> />
+            <label for="set_menuCircles_1">Enable</label>
+
+            <input type="radio" id="set_menuCircles_0" name="mbrn_menuCircles" value="0"
+            <!-- IF not MBRN_MENU_CIRCLES -->checked="checked"<!-- ENDIF --> />
+            <label for="set_menuCircles_0">Disable</label>
+
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>Mega Menu<p>Enable/Disable the mega menu.</p></dt>
+          <dd>
+            <input type="radio" id="set_menuMega_1" name="mbrn_menuMega" value="1"
+            <!-- IF MBRN_MENU_MEGA -->checked="checked"<!-- ENDIF --> />
+            <label for="set_menuMega_1">Enable</label>
+
+            <input type="radio" id="set_menuMega_0" name="mbrn_menuMega" value="0"
+            <!-- IF not MBRN_MENU_MEGA -->checked="checked"<!-- ENDIF --> />
+            <label for="set_menuMega_0">Disable</label>
+
+          </dd>
+        </dl>
+
+        </div>
+      </div><!-- /#menu-opts.panel -->
+
+      <div id="menulinks-opts" class="col-md-6 panel">
+        <div class="panel-heading">
+          <h3><i class="fa fa-link"></i> Menu Links</h3>
+        </div>
+
+        <div class="panel-body">
+          <p>Add Custom Menu Items to the Site Menu.</p>
+
+        <dl class="option">
+          <dt>
+            <label for="set_menuLink1">Custom Menu Item 1
+              <i>Leave empty to delete custom menu item.
+              <br>Pick a Font Awesome icon name <a href="http://fortawesome.github.io/Font-Awesome/icons/" title="Font Awesome Icons">
+                <i class="fa fa-external-link-square"></i>
+                </a><br/>
+                <strong>Ex: fa-star</strong>
+              </i>
+            </label>
+          </dt>
+          <dd class="multi-input">
+            <input type="text" id="set_menuLink1" name="mbrn_menuLink1" value="{MBRN_MENU_LINK1}" placeholder="Title" />
+            <input type="text" id="set_menuLinkUrl1" name="mbrn_menuLinkUrl1" value="{MBRN_MENU_LINKURL1}" placeholder="URL" />
+            <input type="text" id="set_menuLinkIcon1" name="mbrn_menuLinkIcon1" value="{MBRN_MENU_LINKICON1}" placeholder="Icon" />
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_menuLink2">Custom Menu Item 2
+              <i>Leave empty to delete custom menu item.
+              <br>Pick a Font Awesome icon name <a href="http://fortawesome.github.io/Font-Awesome/icons/" title="Font Awesome Icons">
+                <i class="fa fa-external-link-square"></i>
+                </a><br/>
+                <strong>Ex: fa-heart</strong>
+              </i>
+            </label>
+          </dt>
+          <dd class="multi-input">
+            <input type="text" id="set_menuLink2" name="mbrn_menuLink2" value="{MBRN_MENU_LINK2}" placeholder="Title" />
+            <input type="text" id="set_menuLinkUrl2" name="mbrn_menuLinkUrl2" value="{MBRN_MENU_LINKURL2}" placeholder="URL" />
+            <input type="text" id="set_menuLinkIcon2" name="mbrn_menuLinkIcon2" value="{MBRN_MENU_LINKICON2}" placeholder="Icon" />
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_menuLink3">Custom Menu Item 3
+              <i>Leave empty to delete custom menu item.
+              <br>Pick a Font Awesome icon name <a href="http://fortawesome.github.io/Font-Awesome/icons/" title="Font Awesome Icons">
+                <i class="fa fa-external-link-square"></i>
+                </a><br/>
+                <strong>Ex: fa-folder</strong>
+              </i>
+            </label>
+          </dt>
+          <dd class="multi-input">
+            <input type="text" id="set_menuLink3" name="mbrn_menuLink3" value="{MBRN_MENU_LINK3}" placeholder="Title" />
+            <input type="text" id="set_menuLinkUrl3" name="mbrn_menuLinkUrl3" value="{MBRN_MENU_LINKURL3}" placeholder="URL" />
+            <input type="text" id="set_menuLinkIcon3" name="mbrn_menuLinkIcon3" value="{MBRN_MENU_LINKICON3}" placeholder="Icon" />
+          </dd>
+        </dl>
+
+        </div>
+      </div><!-- /#menulinks-opts.panel -->
+      </div><!-- /.row -->
+
+
+
+      <div class="panel post-buttons">
+        <fieldset class="submit-buttons">
+          <input type="submit" id="submit_menu" name="submit_menu" value="{L_SUBMIT}" class="button1 default-submit-action" />
+          {S_FORM_TOKEN}
+        </fieldset>
+      </div>
+    </form>
+    </div><!-- /#settings-menu -->
+
+<!--
+
+SIDEBAR WIDGETS SETTINGS :
+
+ -->
+
+    <div class="tab-pane fade" id="settings-widgets">
+    <form id="theme-cp-widgets" action="mobbern-tcp/settings" method="post">
+      <h2>Sidebar Widgets Customization</h2>
+
+      <div class="row">
+      <div class="col-md-6 panel">
+      <div id="widget-ads-opts" class="panel">
+        <div class="panel-heading">
+          <h3><i class="fa fa-exclamation-triangle"></i> Special/Ad Widget</h3>
+        </div>
+
+        <div class="panel-body">
+          <p>Customize the Widget.</p>
+
+        <dl class="option">
+          <dt>Widget Visibility<p>Show/Hide the widget.</p></dt>
+          <dd>
+            <input type="radio" id="set_wAd_1" name="mbrn_wAd" value="1"
+            <!-- IF MBRN_W_AD -->checked="checked"<!-- ENDIF --> />
+            <label for="set_wAd_1">Enable</label>
+
+            <input type="radio" id="set_wAd_0" name="mbrn_wAd" value="0"
+            <!-- IF not MBRN_W_AD -->checked="checked"<!-- ENDIF --> />
+            <label for="set_wAd_0">Disable</label>
+
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_wAdTitle">Widget Title
+              <i>Edit the title of the widget.</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_wAdTitle" name="mbrn_wAdTitle" value="{MBRN_W_AD_TITLE}" />
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_wAdImg">Widget Ad/Image
+              <i>URL of the Image<br /><strong>Ex:my_ad.jpg</strong></i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_wAdImg" name="mbrn_wAdImg" value="{MBRN_W_AD_IMG}" />
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_wAdUrl">Widget Ad URL
+              <i>The URL for the Ad<br /><strong>Ex:http://www.phpbbseo.ir</strong></i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_wAdUrl" name="mbrn_wAdUrl" value="{MBRN_W_AD_URL}" />
+          </dd>
+        </dl>
+
+        </div>
+      </div><!-- /#widget-ads-opts.panel -->
+
+      <div id="widget-tabs-opts" class="panel">
+        <div class="panel-heading">
+          <h3><i class="fa fa-list-alt"></i> Tabs Widget</h3>
+        </div>
+
+        <div class="panel-body">
+          <p>Toggle the Widget.</p>
+
+        <dl class="option">
+          <dt>Widget Visibility<p>Show/Hide the widget.</p></dt>
+          <dd>
+            <input type="radio" id="set_wTabs_1" name="mbrn_wTabs" value="1"
+            <!-- IF MBRN_W_TABS -->checked="checked"<!-- ENDIF --> />
+            <label for="set_wTabs_1">Enable</label>
+
+            <input type="radio" id="set_wTabs_0" name="mbrn_wTabs" value="0"
+            <!-- IF not MBRN_W_TABS -->checked="checked"<!-- ENDIF --> />
+            <label for="set_wTabs_0">Disable</label>
+
+          </dd>
+        </dl>
+        </div>
+      </div><!-- /#widget-tabs-opts.panel -->
+
+      </div><!-- /.col-md-6.panel -->
+
+      <div class="col-md-6 panel">
+      <div id="widget-note-opts" class="panel">
+        <div class="panel-heading">
+          <h3><i class="fa fa-bell"></i> Notification Widget</h3>
+        </div>
+
+        <div class="panel-body">
+          <p>Customize the Widget.</p>
+
+        <dl class="option">
+          <dt>Widget Visibility<p>Show/Hide the widget.</p></dt>
+          <dd>
+            <input type="radio" id="set_wNoted_1" name="mbrn_wNote" value="1"
+            <!-- IF MBRN_W_NOTE -->checked="checked"<!-- ENDIF --> />
+            <label for="set_wNoted_1">Enable</label>
+
+            <input type="radio" id="set_wNoted_0" name="mbrn_wNote" value="0"
+            <!-- IF not MBRN_W_NOTE -->checked="checked"<!-- ENDIF --> />
+            <label for="set_wNoted_0">Disable</label>
+
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_wNoteMsg">Widget Message
+              <i>Edit the message of the widget.</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_wNoteMsg" name="mbrn_wNoteMsg" value="{MBRN_W_NOTE_MSG}" />
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_wNoteUrl">Widget Link URL
+              <i>The URL for the widget<br /><strong>Ex:http://www.google.com</strong></i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_wNoteUrl" name="mbrn_wNoteUrl" value="{MBRN_W_NOTE_URL}" />
+          </dd>
+        </dl>
+
+        </div>
+      </div><!-- /#widget-note-opts.panel -->
+
+      <div id="widget-col-opts" class="panel">
+        <div class="panel-heading">
+          <h3><i class="fa fa-toggle-on"></i> Collapsible Widget</h3>
+        </div>
+
+        <div class="panel-body">
+          <p>Customize the Widget.</p>
+
+        <dl class="option">
+          <dt>Widget Visibility<p>Show/Hide the widget.</p></dt>
+          <dd>
+            <input type="radio" id="set_wCol_1" name="mbrn_wCol" value="1"
+            <!-- IF MBRN_W_COL -->checked="checked"<!-- ENDIF --> />
+            <label for="set_wCol_1">Enable</label>
+
+            <input type="radio" id="set_wCol_0" name="mbrn_wCol" value="0"
+            <!-- IF not MBRN_W_COL -->checked="checked"<!-- ENDIF --> />
+            <label for="set_wCol_0">Disable</label>
+
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_wColTitle">Widget Title
+              <i>Edit the title of the widget.</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_wColTitle" name="mbrn_wColTitle" value="{MBRN_W_COL_TITLE}" />
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_wColTxt">Widget Content 
+              <i>Text for the content of the widget<br/><strong>phpBB3 allows max 255 chars</strong></i>
+            </label>
+          </dt>
+          <dd>
+            <textarea rows="5" id="set_wColTxt" name="mbrn_wColTxt">{MBRN_W_COL_TXT}</textarea>
+          </dd>
+        </dl>
+
+        </div>
+      </div><!-- /#widget-col-opts.panel -->
+      </div><!-- /.col-md-6.panel -->
+
+      </div><!-- /.row -->
+      <div class="row">
+
+      <div id="widget-txt-opts" class="col-md-12 panel">
+        <div class="panel-heading">
+          <h3><i class="fa fa-asterisk"></i> Custom Widget</h3>
+        </div>
+
+        <div class="panel-body">
+          <p>Add a new custom widget to the sidebar!</p>
+
+        <dl class="option">
+          <dt>Widget Visibility<p>Show/Hide the widget.</p></dt>
+          <dd>
+            <input type="radio" id="set_wTxt_1" name="mbrn_wTxt" value="1"
+            <!-- IF MBRN_W_TXT -->checked="checked"<!-- ENDIF --> />
+            <label for="set_wTxt_1">Enable</label>
+
+            <input type="radio" id="set_wTxt_0" name="mbrn_wTxt" value="0"
+            <!-- IF not MBRN_W_TXT -->checked="checked"<!-- ENDIF --> />
+            <label for="set_wTxt_0">Disable</label>
+
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_wTxtTitle">Widget Title
+              <i>Edit the title of the widget.</i>
+            </label>
+          </dt>
+          <dd>
+            <input type="text" id="set_wTxtTitle" name="mbrn_wTxtTitle" value="{MBRN_W_TXT_TITLE}" />
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>
+            <label for="set_wTxtTXT">Widget Content 
+              <i>Text for the content of the widget<br/><strong>phpBB3 allows max 255 chars</strong></i>
+            </label>
+          </dt>
+          <dd>
+            <textarea rows="5" id="set_wTxtTXT" name="mbrn_wTxtTXT" value="{MBRN_W_TXT_TXT}"></textarea>
+          </dd>
+        </dl>
+
+        </div>
+      </div><!-- /#widget-txt-opts.panel -->
+
+      </div><!-- /.row -->
+
+
+
+      <div class="panel post-buttons">
+        <fieldset class="submit-buttons">
+          <input type="submit" id="submit_sidebar_widgets" name="submit_sidebar_widgets" value="{L_SUBMIT}" class="button1 default-submit-action" />
+          {S_FORM_TOKEN}
+        </fieldset>
+      </div>
+    </form>
+    </div><!-- /#settings-widgets -->
+
+<!--
+
+ADS SETTINGS :
+
+ -->
+
+    <div class="tab-pane fade" id="settings-ads">
+    <form id="theme-cp-widgets" action="mobbern-tcp/settings" method="post">
+      <h2>Ads Settings</h2>
+
+      <div class="row">
+
+      <div id="ads-opts" class="col-md-12 panel">
+        <div class="panel-heading">
+          <h3><i class="fa fa-eye"></i> Ads Visibility</h3>
+        </div>
+
+        <div class="panel-body">
+          <p>Change Ads Visibility.
+          <br /><strong>Note: Header/Footer Ad availability is limited to certain header/footer presets!</strong></p>
+
+        <dl class="option">
+          <dt>Header Ads<p>Show/Hide ads in the header.</p></dt>
+          <dd>
+            <input type="radio" id="set_adsHeader_1" name="mbrn_adsHeader" value="1"
+            <!-- IF MBRN_ADS_HEADER -->checked="checked"<!-- ENDIF --> />
+            <label for="set_adsHeader_1">Enable</label>
+
+            <input type="radio" id="set_adsHeader_0" name="mbrn_adsHeader" value="0"
+            <!-- IF not MBRN_ADS_HEADER -->checked="checked"<!-- ENDIF --> />
+            <label for="set_adsHeader_0">Disable</label>
+
+          </dd>
+        </dl>
+
+        <dl class="option">
+          <dt>Footer Ads<p>Show/Hide ads in the footer.</p></dt>
+          <dd>
+            <input type="radio" id="set_adsFooter_1" name="mbrn_adsFooter" value="1"
+            <!-- IF MBRN_ADS_FOOTER -->checked="checked"<!-- ENDIF --> />
+            <label for="set_adsFooter_1">Enable</label>
+
+            <input type="radio" id="set_adsFooter_0" name="mbrn_adsFooter" value="0"
+            <!-- IF not MBRN_ADS_FOOTER -->checked="checked"<!-- ENDIF --> />
+            <label for="set_adsFooter_0">Disable</label>
+
+          </dd>
+        </dl>
+
+        <!-- IF 0 -->
+        <dl class="option">
+          <dt>Sidebar Ads<p>Show/Hide ads in the sidebar.</p></dt>
+          <dd>
+            <input type="radio" id="set_adsSidebar_1" name="mbrn_adsSidebar" value="1"
+            <!-- IF MBRN_ADS_SIDEBAR -->checked="checked"<!-- ENDIF --> />
+            <label for="set_adsSidebar_1">Enable</label>
+
+            <input type="radio" id="set_adsSidebar_0" name="mbrn_adsSidebar" value="0"
+            <!-- IF not MBRN_ADS_SIDEBAR -->checked="checked"<!-- ENDIF --> />
+            <label for="set_adsSidebar_0">Disable</label>
+
+          </dd>
+        </dl>
+        <!-- ENDIF -->
+
+        <dl class="option">
+          <dt>In-Page Ads<p>Show/Hide In-Page Ads.</p></dt>
+          <dd>
+            <input type="radio" id="set_adsInpage_1" name="mbrn_adsInpage" value="1"
+            <!-- IF MBRN_ADS_INPAGE -->checked="checked"<!-- ENDIF --> />
+            <label for="set_adsInpage_1">Enable</label>
+
+            <input type="radio" id="set_adsInpage_0" name="mbrn_adsInpage" value="0"
+            <!-- IF not MBRN_ADS_INPAGE -->checked="checked"<!-- ENDIF --> />
+            <label for="set_adsInpage_0">Disable</label>
+
+          </dd>
+        </dl>
+
+        </div>
+      </div><!-- /#ads-opts.panel -->
+      </div><!-- /.row -->
+
+
+
+      <div class="panel post-buttons">
+        <fieldset class="submit-buttons">
+          <input type="submit" id="submit_ads" name="submit_ads" value="{L_SUBMIT}" class="button1 default-submit-action" />
+          {S_FORM_TOKEN}
+        </fieldset>
+      </div>
+    </form>
+    </div><!-- /#settings-ads -->
+
+  </div><!-- /.tab-content -->
+</div>
+
+<script type="text/javascript" src="{T_THEME_PATH}/js/custom-theme-generator.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  
+  initThemeGenerator();
+  scss_file = "{T_THEME_PATH}/scss/color-theme-frontend.scss";
+  
+  $('#preview_theme').popover({
+    title: "Preview Theme",
+    content: "Preview your theme on the current page",
+    trigger : "hover",
+    placement : "bottom",
+    delay: { show:"250", "hide": 100 }
+    })
+  $('#download_theme').popover({
+    title: "Download CSS File",
+    content: "Download your theme file.<br/>Save & upload it in the '<strong class='text-danger'>theme</strong>' directory overwriting '<strong class='text-danger'>color-theme.css</strong>'.<br/><i>See the documentation for detailed instructions on custom color themes!</i>",
+    trigger : "hover",
+    placement : "bottom",
+    html : true,
+    delay: { show:"250", "hide": 200 }
+    })
+
+
+  $('#set_customColor_enable').on('ifChecked', function(){ enableCustomColor(color_var); });
+  $('#set_customColor_disable').on('ifChecked', function(){ disableCustomColor(color_var); });
+
+});
+</script>
+<!-- INCLUDE overall_footer.html -->
+<!-- ENDIF -->

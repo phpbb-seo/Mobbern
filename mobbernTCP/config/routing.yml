@@ -1,0 +1,10 @@
+m_mTCP_base:
+    path: /mobbern-tcp
+    defaults: { _controller: phpbbseo.mobbernTCP.controller:base }
+
+m_mTCP_settings:
+    path: /mobbern-tcp/settings
+    defaults: { _controller: phpbbseo.mobbernTCP.controller.settings:manage }
+
+m_Mobbern_home:
+  path: ../

@@ -1,0 +1,29 @@
+services:
+    phpbbseo.mobbernTCP.controller:
+        class: phpbbseo\mobbernTCP\controller\main
+        arguments:
+            - '@auth'
+            - '@config'
+            - '@template'
+            - '@user'
+            - '@controller.helper'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+            - '@phpbbseo.mobbernTCP.controller.settings'
+    phpbbseo.mobbernTCP.controller.settings:
+        class: phpbbseo\mobbernTCP\controller\settings
+        arguments:
+            - '@auth'
+            - '@config'
+            - '@request'
+            - '@user'
+            - '@controller.helper'
+    phpbbseo.mobbernTCP.listener:
+        class: phpbbseo\mobbernTCP\event\main_listener
+        arguments:
+            - '@config'
+            - '@template'
+            - '@user'
+            - '@controller.helper'
+        tags:
+            - { name: event.listener }

@@ -1,0 +1,156 @@
+3.3.6 - PATCH AND UPDATES - 23/01/2022
+
+*FIXES
+  - re-write document for phpBB 3.3 series
+*ADDS
+  - Compatible with phpBB 3.3.6
+
+3.02 & 3.12 - PATCH AND UPDATES - 28/01/2014
+
+*FIXES
+  - fixed TCP extension setttings and admin log-in [phpBB3.1]
+  - fixed TCP extension redirect to a page with broken CSS [phpBB3.1]
+  - fixed TCP sidebar options not working [phpBB3.1]
+  - fixed mcp_topic.html template error [phpBB3.0]
+  - fixed responsive images in posts [both versions]
+  - fixed Private Messages bugs [phpBB3.1]
+  - fixed bug with hidden password box [phpBB3.1]
+    - ucp_profile_reg_details.html
+  - fixed breadcrumb links container width issue [phpBB3.1]
+*CHANGES
+  - Updated the Azure color theme - Azure 2.0 [both versions]
+  - Improved Material Design Implementation [both versions]
+  - Improved Slider Design [both versions]
+  - improved TCP with Font Awesome Icons [phpBB3.1]
+  - Improved Documentation with screencasts & more [docs]
+*ADDS
+  - updated to Font Awesome 4.3.0 [both versions]
+  - added smooth font rendering in Chrome [both versions]
+  - added 'Best Practices' section in the Documentation [docs]
+  - added style customization file 'style.css' [both versions]
+
+3.01 & 3.11 - MAJOR UPDATE - PHPBB3.1 THEME CONTROL PANEL - 23/12/2014
+
+* FIXES
+  - Fixed post author contact icons [phpBB3.0] :
+    - posting_layout.html
+  - Fixed forum rules container [both versions] :
+    - posting_layout.html
+    - viewforum_body.html
+    - viewtopic_body.html
+* CHANGES
+  - Material design for the phpBB Alert [phpBB3.1] :
+    - common.css
+    - colours.css
+  - Material design for the notifications button in "Transparent Navbar" [both versions] :
+    - mobbern-responsive.css
+  - Improved notifications button (aware of new notifications) [phpBB3.0] :
+    - m_header_breadcrumb.html
+  - Changed forum category icon from "fa-bars" to "fa-file-text" [both versions] :
+    - forumlist_body.html
+    - viewforum_body.html
+  - Improved navbar transparency fade effect in "Transparent Navbar" [both versions] :
+    - mobbern-responsive.css
+  - Tweaked CSS bottom border for the navigation bar [both versions] :
+    - mobbern.css
+* ADDS
+  - Added PHPBB3.1 Theme Control Panel Extension.
+
+
+
+3.0b & 3.1b - PATCH AND FIXES - 10/12/2014
+
+* FIXES
+  - Removed Image not found errors [both versions]
+  - Fixed multilingual support for the login menu [both versions] - m_header_navbar.html
+  - Fixed vertical pagination problem [phpBB3.1]
+  - Fixed notifications page style [phpBB3.1] - ucp_notifications.html
+  - Fixed notification drop-down style [phpBB3.1] - notification_dropdown.html
+  - Fixed posting template files [phpBB3.1] :
+    - posting_attach_body.html
+    - posting_body.html
+    - posting_editor.html
+    - posting_layout.html
+    - posting_topic_review.html
+    - report_body.html
+  - Fixed "message_body.html" template file [phpBB3.1]
+  - Fixed "captcha_qa.html" template file [both versions]
+* CHANGES
+  - Improved notification button (aware of new notifications) [phpBB3.1] :
+    - m_header_breadcrumb.html
+  - Improved RTL Support [both versions]
+* ADDS
+  - Added built-in support for the Board Boardwatch MOD [phpBB3.0]
+
+
+
+3.0 & 3.1 - MAJOR UPDATE - PHPBB3.1 COMPATIBILITY - 27/11/2014
+
+* FIXES
+  - Fixed login & register page for mobile version.
+  - Sticky menu for mobile version is now smaller and better.
+  - Attached images are now responsive.
+  - Fixed forum RSS Icon.
+  - Fixed subforum icons.
+  - More than 25 minor fixes.
+* CHANGES
+  - Font Awesome Updated to 4.2.0.
+  - Added more icons leading to better design.
+  - New template files naming convention to avoid conflicts (m_file_name).
+  - Changed CSS file names.
+  - Updated Documentation.
+* ADDS
+  - Added user menu at the right of the menu bar.
+  - Added drop-down notification menu at the right of the breadcrumb.
+  - Added Header carousel support.
+  - Added unique class attribute to every important panel.
+  - Added PHPBB3.1 Compatibility.
+
+
+
+1.6 - MINOR UPDATE 23/10/2014
+
+* FIXES
+  - Fixed CSS Font Size for quoted topics and Profile Page.
+  - Fixed bug with Menu Icons in Theme Control Panel for Custom Menu Items.
+* CHANGES
+  - Updated Documentation.
+
+
+
+1.5 – FIRST UPDATE 16/10/2014
+
+* FIXES
+  - Fixed issues, update template and theme files
+  - Fixed bug with static navigation bar
+  - Fixed bug when pop-up windows would ignore theme style
+  - Fixed responsiveness Issues
+* CHANGES
+  - Improved Typography
+  - Round Profile Pictures (Avatar)
+  - Improved Footer Content
+  - Improved Documentation
+  - Modularized Sidebar via the Template File "sidebar-right.html" 
+* ADDS
+  - Template files for Ads :
+    - ads-code-footer.html
+    - ads-code-header.html
+    - ads-code-inpage.html
+  - In-Page Ads Support
+  - Theme Control Panel
+  - 2 New Header Presets :
+    - Header with Transparent Navbar
+    - Normal Header
+  - 2 New Footer Presets :
+    - Alternative 3 Columns Footer
+    - 4 Columns Footer
+  - Full-Width and Fixed Width Layout Options
+  - Favicon Support
+  - Logo Image Support
+  - Custom Menu Items and Sidebar Widgets via the Theme Control Panel
+  - Custom Color Theme (with color picker) Support via the Theme Control Panel
+  - Modular Menu Bar via the Template File "header-navbar.html"
+
+
+
+1.0 – INITIAL RELEASE 07/10/2014

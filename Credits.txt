@@ -1,0 +1,12 @@
+Special Thanks to:
+
+Twitter Bootstrap
+jQuery
+NiceScroll 3
+Hipster Ipsum
+Fronteed
+Font Awesome
+phpBB Limited
+phpBB-SEO team
+masivotech.com
+Meisam nobari ( phpBB persian support )
