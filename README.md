@@ -12,8 +12,8 @@
 <p>5 Color Themes Custom Color Themes &amp; Infinitie colors</p>
 <p>&nbsp;(Including Style folder , Extension Folder )</p>
 
-<p>Document is here: https://phpbb-seo.github.io/Documentation/index.html </p>
+<p><b>Document</b> is here: https://phpbb-seo.github.io/Documentation/index.html </p>
 
-<p>Demo is here: http://www.phpbb-seo.ir/demo/Mobbern/index.php </p>
+<p><b>Demo</b> is here: http://www.phpbb-seo.ir/demo/Mobbern/index.php </p>
 
-<p>Donate me by buying Global Steam Wallet code for me Here:  https://dundle.com/steam/ and send the code to this email "meis6m@gmail.com</p>
+<p><b>Donate me</b> by buying <b>Global Steam Wallet</b> code for me Here:  https://dundle.com/steam/ and send the code to this email <b>"meis6m@gmail.com"</b></p>
