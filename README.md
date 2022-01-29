@@ -1,5 +1,5 @@
 # Mobbern
-<img src="http://www.phpbb-seo.ir/demo/Mobbern/demo.png" width="600px" height="900px">
+<img src="http://www.phpbb-seo.ir/demo/Mobbern/demo.png" width="920px" height="689px">
 
 <p>phpBB (3.3.6) Responsive Theme with Material Design</p>
 <ul style="list-style-type: square;">
