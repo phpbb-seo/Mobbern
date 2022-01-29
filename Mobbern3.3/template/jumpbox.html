@@ -1,0 +1,68 @@
+
+<div class="row">
+  <div class="info-block jumpbox">
+	<div class="col-md-8">
+	{CURRENT_TIME}
+	</div>
+
+
+  <!-- IF S_VIEWTOPIC or S_VIEWFORUM or SEARCH_TOPIC or S_SEARCH_ACTION or S_HAS_SUBFORUM -->
+
+		<div class="col-md-4">
+			<!-- IF S_VIEWTOPIC -->
+			<a href="{U_VIEW_FORUM}" accesskey="r">
+			<i class="fa fa-arrow-left"></i>{L_RETURN_TO_FORUM}</a>
+		
+			<!-- ELSEIF S_VIEWFORUM -->
+			<a href="{U_INDEX}" accesskey="r">
+			<i class="fa fa-arrow-left"></i>{L_RETURN_TO_INDEX}</a>
+		
+			<!-- ELSEIF SEARCH_TOPIC -->
+			<a href="{U_SEARCH_TOPIC}" accesskey="r">
+			<i class="fa fa-arrow-left"></i>{L_RETURN_TO_TOPIC}</a>
+		
+			<!-- ELSEIF S_SEARCH_ACTION -->
+			<a href="{U_SEARCH}" title="{L_SEARCH_ADV}" accesskey="r">
+			<i class="fa fa-arrow-left"></i>{L_GO_TO_SEARCH_ADV}</a>
+			<!-- ENDIF -->
+		</div>
+
+	<!-- ENDIF -->
+
+
+	<div class="float-clear"></div>
+  </div> <!-- /.info-block.jumpbox -->
+
+</div>
+
+
+
+<!-- IF S_DISPLAY_JUMPBOX -->
+
+	<div class="dropdown jumpbox jump-menu">
+		<a href="#" class="dropdown-toggle icon-button button1" data-toggle="dropdown" title="<!-- IF S_IN_MCP and S_MERGE_SELECT -->{L_SELECT_TOPICS_FROM}<!-- ELSEIF S_IN_MCP -->{L_MODERATE_FORUM}<!-- ELSE -->{L_JUMP_TO}<!-- ENDIF -->" role="button">
+			<!-- IF S_IN_MCP and S_MERGE_SELECT -->
+				{L_SELECT_TOPICS_FROM}
+			<!-- ELSEIF S_IN_MCP -->
+				<i class="fa fa-cog"></i>&nbsp;&nbsp; {L_MODERATE_FORUM}
+			<!-- ELSE -->
+				<i class="fa fa-folder-open"></i>&nbsp;&nbsp; {L_JUMP_TO}
+			<!-- ENDIF -->
+			<span class="caret up"></span>
+		</a>
+
+		<ul class="dropdown-menu">
+			<!-- BEGIN jumpbox_forums -->
+			<!-- IF jumpbox_forums.FORUM_ID neq -1 -->
+				<li><!-- BEGIN level --><!-- END level -->
+				<a href="{jumpbox_forums.LINK}"><i class="fa fa-folder"></i>&nbsp;&nbsp; {jumpbox_forums.FORUM_NAME}</a></li>
+			<!-- ENDIF -->
+			<!-- END jumpbox_forums -->
+		</ul>
+	</div><!-- /.jump-menu -->
+
+<!-- ELSE -->
+
+	<br /><br />
+
+<!-- ENDIF -->

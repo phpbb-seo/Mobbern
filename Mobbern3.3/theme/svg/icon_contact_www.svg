@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="20px" height="40px" viewBox="0 0 20 40" enable-background="new 0 0 20 40" xml:space="preserve">
+<g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#9AB2DD" d="M4.847,3.233L2.79,5.275l4.181,4.21l-4.181,4.21l2.057,2.042
+		l6.209-6.252L4.847,3.233z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#9AB2DD" d="M12.394,3.233l-2.057,2.042l4.18,4.21l-4.18,4.21l2.057,2.042
+		l6.209-6.252L12.394,3.233z"/>
+</g>
+<g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#078DC6" d="M4.847,23.178L2.79,25.221l4.181,4.209L2.79,33.641l2.057,2.041
+		l6.209-6.252L4.847,23.178z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#078DC6" d="M12.394,23.178l-2.057,2.043l4.18,4.209l-4.18,4.211l2.057,2.041
+		l6.209-6.252L12.394,23.178z"/>
+</g>
+</svg>

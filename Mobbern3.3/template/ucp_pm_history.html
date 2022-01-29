@@ -1,0 +1,53 @@
+<div class="panel panel-ucp-pmhistory">
+  <div class="panel-heading">
+    <h3 id="review">
+      <span class="right-box text-xs"><i class="fa fa-sort"></i>&nbsp; <a href="#review" onclick="viewableArea(getElementById('topicreview'), true); var rev_text = getElementById('review').getElementsByTagName('a').item(0).firstChild; if (rev_text.data == '{LA_EXPAND_VIEW}'){rev_text.data = '{LA_COLLAPSE_VIEW}'; } else if (rev_text.data == '{LA_COLLAPSE_VIEW}'){rev_text.data = '{LA_EXPAND_VIEW}'};">{L_EXPAND_VIEW}</a></span>
+      <i class="fa fa-history"></i> {L_MESSAGE_HISTORY}{L_COLON}
+    </h3>
+  </div>
+
+  <div class="panel-body">
+    <div id="topicreview">
+      <script type="text/javascript">
+      // <![CDATA[
+        bbcodeEnabled = {S_BBCODE_ALLOWED};
+      // ]]>
+      </script>
+
+
+      <!-- BEGIN history_row -->
+      <div class="post <!-- IF history_row.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+
+        <div class="postbody" id="pr{history_row.MSG_ID}">
+
+          <div class="postbody-header">
+            <h3>
+              <!-- IF history_row.U_QUOTE or history_row.MESSAGE_AUTHOR_QUOTE -->
+                <a <!-- IF history_row.U_QUOTE -->href="{history_row.U_QUOTE}"<!-- ELSE -->href="#postingbox" onclick="addquote({history_row.MSG_ID}, '{history_row.MESSAGE_AUTHOR_QUOTE}', '{LA_WROTE}');"<!-- ENDIF --> title="{L_QUOTE} {history_row.MESSAGE_AUTHOR}" class="button icon-button quote-icon">
+                  <i class="fa fa-quote-left" title="{L_QUOTE} {history_row.MESSAGE_AUTHOR}"></i>
+                </a>&nbsp;
+              <!-- ENDIF -->
+              <a href="{history_row.U_VIEW_MESSAGE}" <!-- IF history_row.S_CURRENT_MSG -->class="current"<!-- ENDIF -->>{history_row.SUBJECT}</a>
+            </h3>
+
+            <p class="author">
+              {history_row.MINI_POST_IMG} <i class="fa fa-clock-o" title="{L_SENT_AT}"></i> {history_row.SENT_DATE}
+              <i class="fa fa-user" title="{L_MESSAGE_BY_AUTHOR}"></i> {history_row.MESSAGE_AUTHOR_FULL}
+            </p>
+          </div>
+
+          <div class="content"><!-- IF history_row.MESSAGE -->{history_row.MESSAGE}<!-- ELSE --><span class="error">{L_MESSAGE_REMOVED_FROM_OUTBOX}</span><!-- ENDIF --></div>
+
+          <div id="message_{history_row.MSG_ID}" style="display: none;">{history_row.DECODED_MESSAGE}</div>
+        </div>
+
+      </div>
+      <!-- END history_row -->
+
+    </div>
+  </div>
+</div><!-- /.panel-ucp-pmhistory -->
+
+<hr />
+
+<p><a href="#cp-main" class="scroll-link top2"><i class="fa fa-arrow-circle-up"></i>&nbsp;&nbsp;{L_BACK_TO_TOP}</a></p>

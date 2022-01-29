@@ -1,0 +1,50 @@
+				<!-- IF NOTIFICATIONS_COUNT -->
+				<li>
+					<a href="{U_MARK_ALL_NOTIFICATIONS}" data-ajax="notification.mark_all_read"><i class="fa fa-check"></i>&nbsp;&nbsp; {L_MARK_ALL_READ}</a>
+				</li>
+				<!-- ENDIF -->
+
+				<!-- IF not .notifications -->
+				<li class="no-url"><i class="fa fa-bell-slash"></i> {L_NO_NOTIFICATIONS}</li>
+				<!-- ENDIF -->
+
+
+
+				<!-- BEGIN notifications -->
+				<li class="<!-- IF notifications.UNREAD --> bg2<!-- ENDIF --><!-- IF notifications.STYLING --> {notifications.STYLING}<!-- ENDIF --><!-- IF not notifications.URL --> no-url<!-- ENDIF -->">
+
+					<!-- IF notifications.URL -->
+						<a class="notification-block" href="<!-- IF notifications.UNREAD -->{notifications.U_MARK_READ}" data-real-url="{notifications.URL}<!-- ELSE -->{notifications.URL}<!-- ENDIF -->">
+					<!-- ENDIF -->
+
+						<div class="notification-avatar">
+						<!-- IF notifications.AVATAR -->{notifications.AVATAR}<!-- ELSE --><img src="{T_THEME_PATH}/images/no_avatar.gif" alt="" /><!-- ENDIF -->
+						</div>
+						
+						<div class="notification-text">
+							<p class="notification-title">{notifications.FORMATTED_TITLE}</p>
+							<!-- IF notifications.REFERENCE --><p class="notification-reference">{notifications.REFERENCE}</p><!-- ENDIF -->
+							<!-- IF notifications.FORUM --><p class="notification-forum">{notifications.FORUM}</p><!-- ENDIF -->
+							<!-- IF notifications.REASON --><p class="notification-reason">{notifications.REASON}</p><!-- ENDIF -->
+							<p class="notification-time">{notifications.TIME}</p>
+						</div>
+
+					<!-- IF notifications.URL --></a><!-- ENDIF -->
+
+					<!-- IF notifications.UNREAD -->
+						<a href="{notifications.U_MARK_READ}" class="mark_read icon-mark" data-ajax="notification.mark_read" title="{L_MARK_READ}">
+							<i class="fa fa-check-circle"></i>
+						</a>
+					<!-- ENDIF -->
+				</li>
+				<!-- END notifications -->
+
+				<li class="divider"></li>
+
+				<li>
+					<a href="{U_NOTIFICATION_SETTINGS}"><i class="fa fa-cog"></i>&nbsp;&nbsp; {L_NOTIFICATIONS} {L_SETTINGS}</a>
+				</li>
+
+				<li>
+					<a href="{U_VIEW_ALL_NOTIFICATIONS}"><i class="fa fa-eye"></i>&nbsp;&nbsp; {L_SEE_ALL} {L_NOTIFICATIONS}</a>
+				</li>

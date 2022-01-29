@@ -1,0 +1,173 @@
+
+  <div class="footer-opts">
+
+    <ul class="linklist">
+
+        <!-- IF not S_IS_BOT -->
+          <!-- IF S_WATCH_FORUM_LINK -->
+          <li <!-- IF S_WATCHING_FORUM -->class="icon-unsubscribe"<!-- ELSE -->class="icon-subscribe"<!-- ENDIF -->>
+          <a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}">
+            <i class="fa fa-bell"></i>&nbsp;&nbsp;{S_WATCH_FORUM_TITLE}</a>
+          </li><!-- ENDIF -->
+
+          <!-- IF not S_IS_BOT -->
+          <li>
+            <a href="{U_DELETE_COOKIES}">
+            <i class="fa fa-trash"></i>&nbsp;&nbsp;{L_DELETE_COOKIES}</a>
+          </li>
+          <!-- ENDIF -->
+
+          <!-- IF U_WATCH_FORUM_LINK and not S_IS_BOT -->
+          <li class="small-icon icon-<!-- IF S_WATCHING_FORUM -->unsubscribe<!-- ELSE -->subscribe<!-- ENDIF -->" data-last-responsive="true">
+          <a href="{U_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}" data-ajax="toggle_link" data-toggle-class="small-icon icon-<!-- IF not S_WATCHING_FORUM -->unsubscribe<!-- ELSE -->subscribe<!-- ENDIF -->" data-toggle-text="{S_WATCH_FORUM_TOGGLE}" data-toggle-url="{U_WATCH_FORUM_TOGGLE}">
+          <i class="fa fa-bell"></i>&nbsp;&nbsp;{S_WATCH_FORUM_TITLE}</a>
+          </li>
+          <!-- ENDIF -->
+
+          <!-- IF U_BOOKMARK_TOPIC -->
+          <li class="icon-bookmark">
+          <a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}">
+          <i class="fa fa-bookmark"></i>&nbsp;&nbsp;{L_BOOKMARK_TOPIC}</a>
+          </li>
+          <!-- ENDIF -->
+
+          <!-- IF U_BUMP_TOPIC -->
+          <li class="icon-bump"><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">
+          <i class="fa fa-puzzle-piece"></i>&nbsp;&nbsp;{L_BUMP_TOPIC}</a>
+          </li>
+          <!-- ENDIF -->
+
+        <!-- ENDIF -->
+
+      <li class="rightside"><i class="fa fa-clock-o"></i> {S_TIMEZONE}</li>
+    </ul>
+
+  </div>
+
+
+
+  <!-- IF MBRN_ADS_INPAGE -->
+    <div class="inpage-adspace adspace">
+    <!-- INCLUDE m_ads_code_inpage_bottom.html -->  
+    </div>
+  <!-- ENDIF -->
+
+  <!-- EVENT overall_footer_content_after -->
+
+
+
+</div> <!-- /#page-body -->
+
+
+
+<!-- EVENT overall_footer_page_body_after -->
+
+<div id="page-footer">
+
+
+<!-- FOOTER PRESET:
+================================================== -->
+
+<!-- IF MBRN_LAYOUT_FOOTER != null -->
+  <!-- IF MBRN_LAYOUT_FOOTER == "complex" -->
+  <!-- INCLUDE m_footer_preset_complex.html -->
+  <!-- ENDIF -->
+
+  <!-- IF MBRN_LAYOUT_FOOTER == "iiicolumns" -->
+  <!-- INCLUDE m_footer_preset_3columns.html -->
+  <!-- ENDIF -->
+
+  <!-- IF MBRN_LAYOUT_FOOTER == "minimal" -->
+  <!-- INCLUDE m_footer_preset_minimal.html -->
+  <!-- ENDIF -->
+
+  <!-- IF MBRN_LAYOUT_FOOTER == "ads" -->
+  <!-- INCLUDE m_footer_preset_ads.html -->
+  <!-- ENDIF -->
+
+  <!-- IF MBRN_LAYOUT_FOOTER == "ivcolumns" -->
+  <!-- INCLUDE m_footer_preset_4columns.html -->
+  <!-- ENDIF -->
+
+<!-- ELSE -->
+  <!-- INCLUDE m_footer_preset_complex.html -->
+<!-- ENDIF -->
+
+
+
+  <div id="darkenwrapper" data-ajax-error-title="{L_AJAX_ERROR_TITLE}" data-ajax-error-text="{L_AJAX_ERROR_TEXT}" data-ajax-error-text-abort="{L_AJAX_ERROR_TEXT_ABORT}" data-ajax-error-text-timeout="{L_AJAX_ERROR_TEXT_TIMEOUT}" data-ajax-error-text-parsererror="{L_AJAX_ERROR_TEXT_PARSERERROR}">
+    <div id="darken">&nbsp;</div>
+  </div>
+  <div id="loading_indicator"></div>
+
+  <div id="phpbb_alert" class="phpbb_alert" data-l-err="{L_ERROR}" data-l-timeout-processing-req="{L_TIMEOUT_PROCESSING_REQ}">
+    <a href="#" class="alert_close"><i class="icon fa fa-times"></i></a>
+    <h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+  </div>
+
+  <div id="phpbb_confirm" class="phpbb_alert">
+    <a href="#" class="alert_close"><i class="icon fa fa-times"></i></a>
+    <div class="alert_text"></div>
+  </div>
+
+
+
+</div><!-- /#page-footer -->
+</div><!-- /#wrap -->
+
+
+
+<div class="hidden">
+  <!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
+</div>
+
+
+<!-- BEGIN: SCRIPTS : -->
+
+
+
+<!-- PHPBB3.1 JS : -->
+<script type="text/javascript" src="{T_ASSETS_PATH}/javascript/core.js?assets_version={T_ASSETS_VERSION}"></script>
+<!-- INCLUDEJS forum_fn.js -->
+<!-- INCLUDEJS ajax.js -->
+
+
+
+<!-- BOOTSTRAP JS -->
+<script type="text/javascript" src="{T_THEME_PATH}/js/bootstrap.min.js"></script>
+
+<!-- JQUERY NICESCROLL JS -->
+<script type="text/javascript" src="{T_THEME_PATH}/js/jquery.nicescroll.js"></script>
+
+<!-- JQUERY COOKIE -->
+<script type="text/javascript" src="{T_THEME_PATH}/js/jquery.cookie.js"></script>
+
+<!-- Mobbern JS -->
+<script type="text/javascript" src="{T_THEME_PATH}/js/mobbern-js.js"></script>
+
+
+
+<!-- CUSTOM JS -->
+<script>
+$(document).ready(function(){
+<!-- IF MBRN_SCROLL_CUSTOM == null || MBRN_SCROLL_CUSTOM -->
+
+  // jQuery Nicescroll 
+  if( jQuery().niceScroll ) {
+    var params = { <!-- IF not MBRN_SCROLL_SMOOTH && MBRN_SCROLL_SMOOTH != null -->scrollspeed:2000,mousescrollstep:8*4,smoothscroll:false <!-- ENDIF --> };
+    $("html").niceScroll(params);
+  }
+
+<!-- ENDIF -->
+});
+</script>
+
+
+
+<!-- EVENT overall_footer_after -->
+
+<!-- IF S_PLUPLOAD --><!-- INCLUDE plupload.html --><!-- ENDIF -->
+{$SCRIPTS}
+
+</body>
+</html>

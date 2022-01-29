@@ -1,0 +1,43 @@
+<header class="header-body" id="mobbern-header-3">
+
+
+<!-- Header -->
+<div class="header-content container">
+
+  <div class="row">
+    <div class="col-md-4">
+      <h1 class="anim-150-container">
+      <a id="logo-big" href="{U_INDEX}" title="{L_INDEX}">
+        <!-- IF MBRN_LOGO_IMG != null -->
+        <img src="{MBRN_LOGO_IMG}" alt="{SITENAME}" />
+        <span><!-- IF MBRN_LOGO_TEXT != null -->{MBRN_LOGO_TEXT}<!-- ELSE -->{SITENAME}<!-- ENDIF --></span>
+        <!-- ELSE -->
+        
+        <i class="icon fa <!-- IF MBRN_LOGO_ICON != null -->{MBRN_LOGO_ICON}<!-- ELSE -->fa-home<!-- ENDIF -->"></i>
+        <!-- IF MBRN_LOGO_TEXT != null -->{MBRN_LOGO_TEXT}<!-- ELSE -->{SITENAME}<!-- ENDIF -->
+
+        <!-- ENDIF -->
+      </a>
+      </h1>
+    </div>
+    <div class="col-md-8">
+      <!-- IF MBRN_ADS_HEADER == null || MBRN_ADS_HEADER -->
+      <div class="header-adspace adspace">
+
+      <!-- INCLUDE m_ads_code_header.html -->
+
+      </div>
+      <!-- ENDIF -->
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Header Navbar -->
+<!-- INCLUDE m_header_navbar.html -->
+
+
+
+<div class="float-clear"></div>
+</header><!-- /#mobbern-header-2 -->

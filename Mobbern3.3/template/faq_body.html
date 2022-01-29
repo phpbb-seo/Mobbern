@@ -1,0 +1,50 @@
+<!-- INCLUDE overall_header.html -->
+
+<h2 class="faq-title">{L_FAQ_TITLE}</h2>
+
+
+<div class="panel panel-default panel-faq-links" id="faqlinks">
+	<div class="panel-body">
+		<div class="column1">
+		<!-- BEGIN faq_block -->
+			<!-- IF faq_block.SWITCH_COLUMN or (SWITCH_COLUMN_MANUALLY and faq_block.S_ROW_COUNT == 4) -->
+				</div>
+
+				<div class="column2">
+			<!-- ENDIF -->
+
+			<dl class="faq">
+				<dt>{faq_block.BLOCK_TITLE}</dt>
+				<!-- BEGIN faq_row -->
+					<dd><a href="#f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}">{faq_block.faq_row.FAQ_QUESTION}</a></dd>
+				<!-- END faq_row -->
+			</dl>
+		<!-- END faq_block -->
+		</div>
+	</div><!-- /.panel-faq-links -->
+</div>
+<div class="clear"></div>
+
+
+
+<!-- BEGIN faq_block -->
+	<div class="panel panel-faq-item <!-- IF faq_block.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+
+		<div class="content">
+			<h2>{faq_block.BLOCK_TITLE}</h2>
+			<!-- BEGIN faq_row -->
+				<dl class="faq">
+					<dt id="f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}">{faq_block.faq_row.FAQ_QUESTION}</dt>
+					<dd>{faq_block.faq_row.FAQ_ANSWER}</dd>
+					<dd class="faq-top"><a href="#faqlinks" class="scroll-link top2"><i class="fa fa-chevron-circle-up"></i>&nbsp;&nbsp;&nbsp;{L_BACK_TO_TOP}</a></dd>
+				</dl>
+			<!-- END faq_row -->
+		</div>
+
+	</div><!-- /.panel-faq-item -->
+<!-- END faq_block -->
+
+
+
+<!-- INCLUDE jumpbox.html -->
+<!-- INCLUDE overall_footer.html -->

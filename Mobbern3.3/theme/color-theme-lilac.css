@@ -1,0 +1,90 @@
+/* Mobbern CSS: */
+/* primary-color */
+a, a:link, a:visited, .opts-container .button2, .info-block .display-options .button2, .sidebar-block.tabs-panel .nav-tabs, .sidebar-block.tabs-panel .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus, a.forumtitle:hover, a.forumtitle:active, a.topictitle:hover, a.topictitle:active, .navbar.beadcrumb ul.navlinks a:hover, input.search-icon:focus, .navbar-default .nav > .mega-menu.open > a, .navbar-default .nav > .mega-menu.open > a:hover, .navbar-default .nav > .mega-menu.open > a:focus, #main-navbar .dropdown-menu > li > a, #tabs .activetab a span, #tabs .activetab a:hover span, .search-box .button2 {
+  color: #95B; }
+
+#mobbern-header-2 #main-navbar.navbar, .info-block .display-options .button2:hover, .sidebar-block.tabs-panel .nav-tabs, .topiclist > li.header, #main-navbar.navbar-fixed, #main-navbar.navbar-default, .panel .panel-heading, #minitabs li, .posthilit, #tabs, .table1 thead, a.button1, input.button1, input.button3, a.button2, input.button2 {
+  background-color: #95B; }
+
+.content.quick-reply {
+  border-color: #95B; }
+
+.row .pagination span a:hover, li.pagination span a:hover, .pagination span strong, .row .pagination ul li a:hover {
+  background-color: #95B;
+  border-color: #95B; }
+
+/* primary-color-light */
+#forum-stats .float-right .panel-heading, li.header dd, div#navbar-searchbox-container {
+  border-color: #b27fcc; }
+
+a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover, #main-navbar .navbar-toggle:hover, #main-navbar .navbar-toggle:focus, #tabs a:hover span, .sidebar-block.tabs-panel .nav-tabs>li>a:hover, .sidebar-block.tabs-panel .nav-tabs>li>a:focus {
+  background-color: #b27fcc; }
+
+/* primary-color-lighter */
+#main-navbar .dropdown-menu > li > a:hover, #main-navbar .dropdown-menu > li > a:focus {
+  background-color: #bc90d2; }
+
+/* primary-color-dark */
+a.button1:focus, input.button1:focus, a.button2:focus, input.button2:focus, input.button3:focus, a.button1:active, a.button2:active {
+  background-color: #723f8c; }
+
+/* primary-color-darkest */
+html, #page-footer, #simple-wrap .copyright, .carousel .item {
+  background-color: #472c5f; }
+
+.footer-contact-social a .icon {
+  color: #472c5f; }
+
+/* text-color-footer */
+#page-footer, .footer-links-list a, #simple-wrap .copyright, .copyright a {
+  color: #a79dac; }
+
+.footer-contact-social a .icon {
+  background-color: #a79dac; }
+
+/* BOOTSTRAP CSS: */
+/* primary-color */
+.panel-primary > .panel-heading .badge, .pagination > li > a, .pagination > li > span, .btn-link, .btn-primary .badge, .text-primary {
+  color: #95B; }
+
+.progress-bar, .badge, .label-primary, .navbar-default, .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active, .btn-primary, .bg-primary {
+  background-color: #95B; }
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus, a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active, .panel-primary, .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  border-color: #95B; }
+
+.panel-primary > .panel-heading, .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+  background-color: #95B;
+  border-color: #95B; }
+
+.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #95B; }
+
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #95B; }
+
+/* primary-color-light */
+.navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  background-color: #b27fcc; }
+
+.navbar-default .btn-link[disabled]:hover, fieldset[disabled] .navbar-default .btn-link:hover, .navbar-default .btn-link[disabled]:focus, fieldset[disabled] .navbar-default .btn-link:focus, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus {
+  color: #b27fcc; }
+
+/* other colors */
+a:hover, a:active, a.forumtitle:hover, a.forumtitle:active, a.topictitle:hover, a.topictitle:active {
+  color: #000; }
+
+.copyright a:hover, .footer-panel-body a, .footer-panel-body a:hover, a.button1, input.button1, input.button3, a.button2, input.button2 {
+  color: #FFF; }
+
+
+.carousel .item {
+  background: rgb(89,56,119); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(89,56,119,1) 0%, rgba(112,66,137,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(89,56,119,1)), color-stop(100%,rgba(112,66,137,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(89,56,119,1) 0%,rgba(112,66,137,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(89,56,119,1) 0%,rgba(112,66,137,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(89,56,119,1) 0%,rgba(112,66,137,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(89,56,119,1) 0%,rgba(112,66,137,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#593877', endColorstr='#704289',GradientType=0 ); /* IE6-9 */
+}

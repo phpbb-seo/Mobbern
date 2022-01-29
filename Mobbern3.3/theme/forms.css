@@ -1,0 +1,212 @@
+/* Form Styles 
+---------------------------------------- */
+
+input[type="number"] {
+	-moz-padding-end: inherit;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-results-button, input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+	cursor: pointer;
+}
+
+/* General form styles */
+fieldset { border-width: 0; }
+input {
+  font-weight: normal;
+  cursor: pointer;
+  vertical-align: middle;
+  padding: 0 3px;
+  font-size: 1em;
+}
+select {
+  font-weight: normal;
+  cursor: pointer;
+  vertical-align: middle;
+  border: 1px solid #666666;
+  padding: 1px;
+  background-color: #FAFAFA;
+  font-size: 1em;
+}
+option { padding-right: 1em; }
+option.disabled-option { color: graytext; }
+textarea {
+  font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+  width: 60%;
+  padding: 2px;
+  font-size: 1em;
+  line-height: 1.4em;
+}
+label {
+  cursor: default;
+  padding-right: 5px;
+  color: #676767;
+}
+label input { vertical-align: middle; }
+label img { vertical-align: middle; }
+
+/* Definition list layout for forms */
+fieldset dl { padding: 4px 0; }
+fieldset dt {
+  float: left;
+  width: 40%;
+  text-align: left;
+  display: block;
+}
+fieldset dd {
+  margin-left: 41%;
+  vertical-align: top;
+}
+
+/* Specific layout 1 */
+fieldset.fields1 dt {
+  width: 15em;
+  border-right-width: 0;
+}
+fieldset.fields1 dd {
+  margin-left: 15em;
+  border-left-width: 0;
+}
+fieldset.fields1 { background-color: transparent }
+fieldset.fields1 div { margin-bottom: -3px }
+
+/* Set it back to 0px for the reCaptcha divs: PHPBB3-9587 */
+fieldset.fields1 #recaptcha_widget_div div { margin-bottom: 0 }
+
+/* Specific layout 2 */
+fieldset.fields2 dt {
+  width: 15em;
+  border-right-width: 0;
+}
+fieldset.fields2 dd {
+  margin-left: 16em;
+  border-left-width: 0;
+}
+
+/* Form elements */
+dt label {
+  font-weight: bold;
+  text-align: left;
+}
+dd label {
+  white-space: nowrap;
+  color: #333;
+}
+dd input, dd textarea { margin-right: 3px; }
+dd select { width: auto; }
+dd textarea { width: 85%; }
+
+/* Hover effects */
+fieldset dl:hover dt label { color: #000000; }
+fieldset.fields2 dl:hover dt label { color: inherit; }
+#timezone { width: 95%; }
+* html #timezone { width: 50%; }
+
+/* Quick-login on index page */
+fieldset.quick-login { margin-top: 5px; }
+fieldset.quick-login input { width: auto; }
+fieldset.quick-login input.inputbox {
+  width: 15%;
+  vertical-align: middle;
+  margin-right: 5px;
+  background-color: #f3f3f3;
+}
+fieldset.quick-login label {
+  white-space: nowrap;
+  padding-right: 2px;
+}
+
+/* Display options on viewtopic/viewforum pages  */
+fieldset.display-options {
+  text-align: center;
+  margin: 3px 0 5px 0;
+}
+fieldset.display-options label {
+  white-space: nowrap;
+  padding-right: 2px;
+}
+
+/* Display actions for ucp and mcp pages */
+fieldset.display-actions {
+  text-align: right;
+  white-space: nowrap;
+}
+fieldset.display-actions label {
+  white-space: nowrap;
+  padding-right: 2px;
+}
+fieldset.sort-options { line-height: 2em; }
+
+/* MCP forum selection */
+fieldset.forum-selection { float: right; }
+fieldset.forum-selection2 {
+  margin: 13px 0 3px 0;
+  float: right;
+}
+
+/* Jumpbox */
+fieldset.quickmod { text-align: right; }
+
+
+/* Posting page styles
+---------------------------------------- */
+/* Buttons used in the editor */
+#format-buttons { margin: 15px 0 2px 0; }
+#format-buttons input, #format-buttons select { vertical-align: middle; }
+
+/* Main message box */
+#message-box textarea {
+  min-width: 100%;
+  max-width: 100%;
+  color: #333;
+}
+
+/* Emoticons panel */
+#smiley-box {
+  width: 18%;
+  float: right;
+}
+
+#smiley-box img { margin: 3px; }
+
+/* Input field styles */
+.inputbox {
+  background-color: #FFFFFF;
+  cursor: text;
+}
+input.inputbox { width: 85%; }
+input.medium { width: 50%; }
+input.narrow { width: 25%; }
+.autowidth { width: auto !important; }
+
+/* Form button styles */
+a.button1, input.button1, input.button3, a.button2, input.button2 { width: auto !important; }
+input.button3 {
+  background-image: none;
+  font-variant: small-caps;
+}
+
+/* <a> button in the style of the form buttons */
+a.button1, a.button1:link, a.button1:visited, a.button1:active, a.button2, a.button2:link, a.button2:visited, a.button2:active {
+  text-decoration: none;
+  vertical-align: text-bottom;
+}
+input.disabled {
+  font-weight: normal;
+  color: #666666;
+}
+
+/* Topic and forum Search */
+.search-box { float: left; }
+.full { width: 95%; }
+.medium { width: 50%; }
+.narrow { width: 25%; }
+.tiny { width: 10%; }

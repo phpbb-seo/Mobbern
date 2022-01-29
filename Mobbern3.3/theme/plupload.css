@@ -1,0 +1,89 @@
+#attach-panel-multi {
+	display: none;
+	margin-bottom: 1em;
+}
+
+#file-list td {
+	vertical-align: middle;
+}
+
+.attach-name {
+	width: 50%;
+}
+
+.attach-comment {
+	width: 30%;
+}
+
+.attach-filesize {
+	width: 15%;
+}
+
+.attach-status {
+	width: 5%;
+}
+
+.attach-filesize, .attach-status {
+	text-align: center;
+}
+
+.attach-controls {
+	display: inline-block;
+	float: right;
+}
+
+#attach-row-tpl, .nojs .file-inline-bbcode {
+	display: none;
+}
+
+#file-total-progress {
+	height: 2px;
+	display: block;
+	position: relative;
+	margin: 4px;
+}
+
+.file-progress {
+	background-color: #CCCCCC;
+	display:inline-block;
+	height: 8px;
+	width: 50px;
+}
+
+.file-progress-bar, #file-total-progress-bar {
+	background-color: green;
+	display: block;
+	height: 100%;
+	width: 0;
+}
+
+.file-status.file-working {
+	content: "\f021";
+	webkit-animation: fa-spin 2s infinite linear;
+	animation: fa-spin 2s infinite linear;
+}
+
+.file-status.file-uploaded:before { content: "\f058"; }
+
+.file-status.file-error:before { content: "\f057"; }
+
+.file-status {
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	font: normal normal normal 14px/1 FontAwesome;
+}
+
+.file-name {
+	max-width: 65%;
+	vertical-align: bottom;
+}
+
+.panel-posting-attach .file-name {
+	width: 60%;
+	line-height: 38px;
+	font-weight: 600;
+	display: block;
+	float: left;
+	overflow: hidden;
+}

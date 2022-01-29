@@ -1,0 +1,68 @@
+<!-- Breadcrumb Navigation Bar
+  ================================================== -->
+
+<div class="navbar beadcrumb">
+	<div class="container">
+	<ul class="navitems">
+		<li>
+			<a href="{U_INDEX}" accesskey="h"><i class="fa fa-home"></i>&nbsp;&nbsp;{L_INDEX}</a>
+		  <!-- BEGIN navlinks -->
+		  <strong>&nbsp;&raquo;&nbsp;</strong> <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a>
+		  <!-- END navlinks -->
+		</li>
+
+		<!-- IF 0 -->
+		<li class="rightside"><a href="#" onclick="fontsizeup(); return false;" onkeypress="return fontsizeup(event);" class="fontsize" title="{L_CHANGE_FONT_SIZE}">{L_CHANGE_FONT_SIZE}</a></li>
+		<!-- ENDIF -->
+
+		<!-- IF U_EMAIL_TOPIC --><li class="rightside"><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}" class="sendemail">{L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
+		<!-- IF U_EMAIL_PM --><li class="rightside"><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class="sendemail">{L_EMAIL_PM}</a></li><!-- ENDIF -->
+		<!-- IF U_PRINT_TOPIC --><li class="rightside"><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p" class="print">{L_PRINT_TOPIC}</a></li><!-- ENDIF -->
+		<!-- IF U_PRINT_PM --><li class="rightside"><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p" class="print">{L_PRINT_PM}</a></li><!-- ENDIF -->
+	</ul>
+
+
+	<ul class="navbuttons dropdown">
+
+	<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+		<li class="controls-btn">
+			<a href="#" id="notification_list_button" class="dropdown-toggle breadcrumb-button button1 <!-- IF NOTIFICATIONS_COUNT -->bg-danger<!-- ENDIF -->" data-toggle="dropdown" title="{L_NOTIFICATIONS}">
+				<i class="fa fa-exclamation"></i>&nbsp;&nbsp;
+				<!-- IF NOTIFICATIONS_COUNT --><strong>{NOTIFICATIONS_COUNT} New</strong><!-- ENDIF -->
+				{L_NOTIFICATIONS}
+				<span class="caret"></span>
+			</a>
+
+			<ul class="dropdown-menu">
+				<!-- IF S_DISPLAY_PM -->
+				<li>
+					<a class="<!-- IF PRIVATE_MESSAGE_COUNT -->strong<!-- ENDIF -->" href="{U_PRIVATEMSGS}">
+						<i class="fa fa-envelope"></i>&nbsp;&nbsp; <strong>{PRIVATE_MESSAGE_COUNT}</strong>
+						<!-- IF PRIVATE_MESSAGE_COUNT neq 1 -->{L_PRIVATE_MESSAGES}<!-- ELSE -->{L_PRIVATE_MESSAGE}<!-- ENDIF -->
+					</a>
+				</li>
+				<!-- ENDIF -->
+
+				<!-- IF S_NOTIFICATIONS_DISPLAY -->
+				<li class="divider"></li>
+				<!-- INCLUDE notification_dropdown.html -->
+				<!-- ENDIF -->
+
+			</ul>
+		</li>
+	<!-- ENDIF -->
+
+	<!-- IF not S_IS_BOT -->
+		<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+		<li class="controls-btn">
+			<a href="{U_REGISTER}" class="breadcrumb-button button1" title="{L_REGISTER}">
+				<i class="fa fa-pencil-square"></i>&nbsp;&nbsp; {L_REGISTER}
+			</a>
+		</li>
+		<!-- ENDIF -->
+	<!-- ENDIF -->
+
+	</ul>
+	</div><!-- /.container -->
+</div><!-- /.navbar.beadcrumb -->
+<!-- END: BREADCRUMB -->

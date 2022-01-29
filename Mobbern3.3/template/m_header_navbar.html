@@ -1,0 +1,269 @@
+<nav id="main-navbar" class="navbar navbar-default navbar-static-top">
+<div class="container">
+
+  <div class="nav-content">
+
+    <div class="float-left">
+
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <ul class="nav float-left">
+        <li class="active">
+          <a id="logo" href="{U_INDEX}" title="{L_INDEX}">
+          <!-- IF MBRN_LOGO_IMG != null -->
+          <img src="{MBRN_LOGO_IMG}" alt="{SITENAME}" />
+          <!-- IF MBRN_LOGO_TEXT != null -->{MBRN_LOGO_TEXT}<!-- ELSE -->{SITENAME}<!-- ENDIF -->
+          <!-- ELSE -->
+          
+          <i class="icon fa <!-- IF MBRN_LOGO_ICON != null -->{MBRN_LOGO_ICON}<!-- ELSE -->fa-home<!-- ENDIF -->"></i>
+          <!-- IF MBRN_LOGO_TEXT != null -->{MBRN_LOGO_TEXT}<!-- ELSE -->{SITENAME}<!-- ENDIF -->
+
+          <!-- ENDIF -->
+          </a>
+        </li>
+      </ul>
+
+      <div class="navbar-collapse collapse float-left">
+      <ul class="nav navbar-nav">
+
+        <!-- IF MBRN_MENU_MEGA == null || MBRN_MENU_MEGA -->
+        <li class="dropdown mega-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <i class="icon fa fa-coffee"></i>Articles <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="row">
+              <div class="col-md-4">
+                <h3>Headline</h3>
+                <a href="#" class="headline-panel">
+                  <img class="mega-menu-headline" src="{T_THEME_PATH}/images/menu_headline.png" alt="Headline Article">
+                  <p>Cosby sweater twee scenester wolf vinyl retro authentic mumblecore artisan.</p>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <h3>Links</h3>
+                <ul class="list-unstyled">
+                  <li><a href="#">First link</a></li>
+                  <li><a href="#">Second link</a></li>
+                  <li><a href="#">Third link example</a></li>
+                  <li><a href="#">Fourth link</a></li>
+                  <li><a href="#">Fifth and last link</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h3>Forum Categories</h3>
+                <ul class="list-unstyled">
+                  <li><a href="#">General Discussion</a></li>
+                  <li><a href="#">Off-Topic</a></li>
+                  <li><a href="#">Creative Corner</a></li>
+                  <li><a href="#">Private Forums</a></li>
+                  <li><a href="#">Announcements</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li><!-- /.mega-menu -->
+        <!-- ENDIF -->
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+           <i class="icon fa fa-share-alt"></i>Forum
+           <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+
+            <!-- IF S_USER_LOGGED_IN -->
+            <li><a href="{U_SEARCH_NEW}"><i class="fa fa-bolt"></i>{L_SEARCH_NEW}</a></li>
+            <!-- ENDIF -->
+
+            <li><a href="{U_SEARCH_ACTIVE_TOPICS}"><i class="fa fa-exchange"></i>{L_SEARCH_ACTIVE_TOPICS}</a></li>
+            <li><a href="{U_SEARCH_UNANSWERED}"><i class="fa fa-folder"></i>{L_SEARCH_UNANSWERED}</a></li>
+
+            <!-- IF not S_IS_BOT and U_MARK_FORUMS -->
+            <li><a href="{U_MARK_FORUMS}" accesskey="m"><i class="fa fa-folder-open"></i>{L_MARK_FORUMS_READ}</a></li>
+            <!-- ENDIF -->
+            <li class="divider"></li>
+
+          	<li><a href="{U_DELETE_COOKIES}"><i class="fa fa-times"></i>{L_DELETE_COOKIES}</a></li>
+
+            <li class="divider"></li>
+
+            <!-- IF not S_ADMIN_AUTH and S_REGISTER_ENABLED -->
+            <li><a href="{U_TERMS_USE}" title="{L_TERMS_USE}"><i class="fa fa-leaf"></i>{L_TERMS_USE}</a></li>
+            <li><a href="{U_PRIVACY}" title="{L_PRIVACY}"><i class="fa fa-gavel"></i>{L_PRIVACY}</a></li>
+            <!-- ENDIF -->
+
+            <li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="fa fa-question"></i>{L_FAQ}</a></li>
+          
+            <!-- IF S_DISPLAY_MEMBERLIST -->
+            <li class="divider"></li>
+            <li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="fa fa-users"></i>{L_MEMBERLIST}</a></li>
+            <!-- IF U_TEAM -->
+            <li><a href="{U_TEAM}"><i class="fa fa-graduation-cap"></i>{L_THE_TEAM}</a></li>
+            <!-- ENDIF -->
+            <!-- ENDIF -->
+          </ul>
+        </li>
+
+        <!-- START: User Menu Items -->
+        
+        <!-- END: User Menu Items -->
+
+        <!-- IF MBRN_MENU_LINK1 != null -->
+        <li class="menu-item-custom">
+          <a href="{MBRN_MENU_LINKURL1}" title="{MBRN_MENU_LINK1}">
+          <i class="icon fa <!-- IF MBRN_MENU_LINKICON1 != null && MBRN_MENU_LINKICON1 -->{MBRN_MENU_LINKICON1}<!-- ELSE -->fa-star<!-- ENDIF -->"></i>{MBRN_MENU_LINK1}
+          </a>
+        </li>
+        <!-- ENDIF -->
+        <!-- IF MBRN_MENU_LINK2 != null -->
+        <li class="menu-item-custom">
+          <a href="{MBRN_MENU_LINKURL2}" title="{MBRN_MENU_LINK2}">
+          <i class="icon fa <!-- IF MBRN_MENU_LINKICON2 != null && MBRN_MENU_LINKICON2 -->{MBRN_MENU_LINKICON2}<!-- ELSE -->fa-star<!-- ENDIF -->"></i>
+          {MBRN_MENU_LINK2}
+          </a>
+        </li>
+        <!-- ENDIF -->
+        <!-- IF MBRN_MENU_LINK3 != null -->
+        <li class="menu-item-custom">
+          <a href="{MBRN_MENU_LINKURL3}" title="{MBRN_MENU_LINK3}">
+          <i class="icon fa fa-star"></i>{MBRN_MENU_LINK3}
+          <i class="icon fa <!-- IF MBRN_MENU_LINKICON3 != null && MBRN_MENU_LINKICON3 -->{MBRN_MENU_LINKICON3}<!-- ELSE -->fa-star<!-- ENDIF -->"></i>
+          </a>
+        </li>
+        <!-- ENDIF -->
+
+      </ul>
+      </div>
+    </div><!-- /.float-left -->
+
+
+    <div class="float-right">
+    <ul class="nav navbar-nav">
+
+    <!-- IF not S_IS_BOT -->
+     <!-- IF S_USER_LOGGED_IN -->
+     <li class="member-menu dropdown">
+       <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" accesskey="x">
+       <i class="icon fa fa-power-off"></i><span class="inner-text">{S_USERNAME}</span><span class="caret"></span></a>
+
+       <!-- User Menu : -->
+       <ul id="user-menu" class="dropdown-menu">
+        
+        <li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-user"></i>{L_PROFILE}</a></li>
+
+        <!-- IF U_ACP -->
+        <li><a href="{U_ACP}"><i class="fa fa-cog"></i>{L_ACP}</a></li>
+        <!-- ENDIF -->
+
+        <!-- IF U_ACP && MBRN_CP -->
+        <li><a href="{MBRN_CP_URL}?sid={SESSION_ID}"><i class="icon fa fa-wrench"></i>{L_MBRN_TCP}</a>
+        </li>
+        <!-- ENDIF -->
+
+        <!-- IF U_MCP -->
+        <li><a href="{U_MCP}"><i class="fa fa-cogs"></i>{L_MCP}</a></li>
+        <!-- ENDIF -->
+
+        <!-- IF S_DISPLAY_SEARCH -->
+        <li><a href="{U_SEARCH_SELF}"><i class="fa fa-eye"></i>{L_SEARCH_SELF}</a></li>
+        <!-- ENDIF -->
+
+        <!-- IF U_RESTORE_PERMISSIONS -->
+        <li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
+        <!-- ENDIF -->
+
+        <li class="divider"></li>
+
+        <li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa fa-sign-out"></i>{L_LOGOUT} {S_USERNAME}</a></li>
+       
+       </ul>
+       <!-- /#user-menu -->
+
+     </li>
+     <!-- ELSE -->
+     <li class="dropdown login-box-toggle">
+      <a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" class="dropdown-toggle" data-toggle="dropdown" accesskey="x">
+       <i class="icon fa fa-power-off"></i><span class="inner-text">{L_LOGIN}</span><span class="caret"></span></a>
+    
+       <div class="dropdown-menu" role="login">
+
+       <!-- LOGIN-BOX -->
+
+         <div class="login-box">
+         
+         <form action="{S_LOGIN_ACTION}" method="post" id="login">
+         <fieldset>
+           <dl>
+             <dd class="text-center">
+             <input type="text" tabindex="1" name="username" id="username" size="25" placeholder="{L_USERNAME}" class="inputbox autowidth add-border" title="{L_USERNAME}" />
+             </dd>
+           </dl>
+
+           <dl>
+             <dd class="text-center">
+             <input type="password" tabindex="2" name="password" id="password" size="25" placeholder="{L_PASSWORD}" class="inputbox autowidth add-border" title="{L_PASSWORD}" />
+             </dd>
+           </dl>
+
+           <dl>
+            <dd class="float-left"><a href="{U_SEND_PASSWORD}">{L_FORGOT_PASS}</a></dd>
+  		 
+             <!-- IF S_AUTOLOGIN_ENABLED -->
+             <dd class="text-left float-right"><label for="viewonline">
+             <input type="checkbox" name="viewonline" id="viewonline" tabindex="5" /> Invisible</label>
+             </dd>
+             <!-- ENDIF -->
+
+             <!-- IF U_RESEND_ACTIVATION -->
+             <dd class="float-clear"><a href="{U_RESEND_ACTIVATION}">{L_RESEND_ACTIVATION}</a></dd>
+             <!-- ENDIF -->
+           </dl>
+
+           {S_LOGIN_REDIRECT}
+
+           <dl>
+             <dd class="button-container">
+             <!-- IF S_AUTOLOGIN_ENABLED -->
+             <label for="autologin" class="float-right"><input type="checkbox" name="autologin" id="autologin" tabindex="4" /> {L_LOG_ME_IN}</label>
+             <!-- ENDIF -->
+
+             {S_HIDDEN_FIELDS}
+             <input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="button1 float-left" />
+             </dd>
+           </dl>
+         </fieldset>
+         </form>
+         </div><!-- /.login-box -->
+       </div>
+
+     </li>
+     <!-- ENDIF -->
+    <!-- ENDIF -->
+
+
+    <!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+     <li>
+      <div id="navbar-searchbox-container" class="" role="search" style="width: auto;">
+        <div id="navbar-searchbox">
+          <form action="{U_SEARCH}" method="get" id="search">
+          <fieldset>
+            <input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="search anim-250" value="" />
+            <input class="search-icon anim-250" value="&#xf002;" title="{L_SEARCH}" type="submit" /> {S_SEARCH_HIDDEN_FIELDS}
+          </fieldset>
+          </form>
+        </div>
+        <i class="icon fa fa-search"></i>
+      </div><!-- /#navbar-searchbox-container -->
+     </li>
+    <!-- ENDIF -->
+    </ul>			      
+    </div><!-- /.float-right -->
+  </div><!-- /.nav-content -->
+</div><!-- /.container -->
+</nav><!-- /#main-navbar -->

@@ -1,0 +1,115 @@
+<!-- INCLUDE mcp_header.html -->
+
+<h2>{L_TITLE}</h2>
+
+<form method="post" id="mcp" action="{U_POST_ACTION}">
+
+<div class="panel panel-mcp-logs">
+
+	<div class="action-bar top">
+		<ul class="linklist">
+			<li class="leftside">
+				{L_SEARCH_KEYWORDS}: <input type="text" class="inputbox autowidth" name="keywords" value="{S_KEYWORDS}" />&nbsp;<input type="submit" class="button2" name="filter" value="{L_SEARCH}" />
+			</li>
+			
+			<li class="rightside pagination">
+				{TOTAL}
+				<!-- IF .pagination --> 
+					<!-- INCLUDE pagination.html -->
+				<!-- ELSE --> 
+					 &bull; {PAGE_NUMBER}
+				<!-- ENDIF -->
+			</li>
+		</ul>
+	</div><!-- /.action-bar -->
+
+	<table cellspacing="1" class="table1">
+	<thead>
+	<tr>
+		<th>{L_USERNAME}</th>
+		<th class="text-center">{L_IP}</th>
+		<th class="text-center">{L_TIME}</th>
+		<th>{L_ACTION}</th>
+		<!-- IF S_CLEAR_ALLOWED --><th>{L_MARK}</th><!-- ENDIF -->
+	</tr>
+	</thead>
+
+	<tbody>
+	<!-- IF S_LOGS -->
+		<!-- BEGIN log -->
+		<!-- IF log.S_ROW_COUNT is even --><tr class="bg1"><!-- ELSE --><tr class="bg2"><!-- ENDIF -->
+			<td>{log.USERNAME}</td>
+			<td class="text-center">{log.IP}</td>
+			<td class="text-center">{log.DATE}</td>
+			<td>{log.ACTION}<br />
+			{log.DATA}
+		</td>
+			<!-- IF S_CLEAR_ALLOWED --><td style="width: 5%" align="center"><input type="checkbox" name="mark[]" value="{log.ID}" /></td><!-- ENDIF -->
+		</tr>
+		<!-- END log -->
+	<!-- ELSE -->
+		<tr>
+			<td class="bg1" colspan="<!-- IF S_CLEAR_ALLOWED -->5<!-- ELSE -->4<!-- ENDIF -->" align="center"><span class="gen">{L_NO_ENTRIES}</span></td>
+		</tr>
+	<!-- ENDIF -->
+	</tbody>
+	</table>
+
+	<!-- IF .log -->
+	<div class="forum-opts info-block">
+
+		<div class="float-left">
+		<fieldset class="display-options">
+
+			<label>{L_DISPLAY_POSTS}: {S_SELECT_SORT_DAYS}</label>
+			<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
+			<label>{S_SELECT_SORT_DIR}</label>
+			<input type="submit" name="sort" value="&#xf054;" class="button2" />
+		</fieldset>
+		</div>
+		<div class="float-clear"></div>
+	</div>
+
+	<hr />
+
+	<div class="action-bar bottom">
+		<ul class="linklist">
+			<li class="rightside pagination">
+				{TOTAL}
+				<!-- IF .pagination --> 
+					<!-- INCLUDE pagination.html -->
+				<!-- ELSE --> 
+					 &bull; {PAGE_NUMBER}
+				<!-- ENDIF -->
+			</li>
+		</ul>
+</div><!-- /.action-bar -->
+
+	{S_FORM_TOKEN}
+
+	</div><!-- /.panel-mcp-logs -->
+
+	<!-- IF S_CLEAR_ALLOWED -->
+		<fieldset class="display-actions">
+
+			<a href="#" class="button1" onclick="marklist('mcp', 'mark', true); return false;">
+				<i class="fa fa-check-square-o"></i>&nbsp;&nbsp;{L_MARK_ALL}</a>
+			<a href="#" class="button1" onclick="marklist('mcp', 'mark', false); return false;">
+				<i class="fa fa-square-o"></i>&nbsp;&nbsp;{L_UNMARK_ALL}</a>
+
+			<input class="button1" type="submit" value="{L_DELETE_MARKED}" name="action[del_marked]" />		
+			<input class="button2" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />				
+
+		</fieldset>
+	<!-- ENDIF -->
+		
+	<!-- ELSE -->
+	{S_FORM_TOKEN}
+	</div><!-- /.panel-mcp-logs -->
+	<!-- ENDIF -->
+</form>
+
+<br />
+
+
+<!-- INCLUDE mcp_footer.html -->

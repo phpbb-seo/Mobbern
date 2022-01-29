@@ -1,0 +1,30 @@
+<ul>
+<!-- IF BASE_URL and TOTAL_PAGES > 6 -->
+	<li class="dropdown page-jump-menu">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" title="{L_JUMP_TO_PAGE_CLICK}" role="button">
+		<i class="fa fa-file"></i>&nbsp;&nbsp; {PAGE_NUMBER}
+		</a>
+		&nbsp; &bull; &nbsp;
+		<ul class="dropdown-menu hidden">
+			<li>{L_JUMP_TO_PAGE}{L_COLON}</li>
+			<li class="page-jump-form">
+				<input type="number" name="page-number" min="1" maxlength="6" title="{L_JUMP_PAGE}" class="inputbox tiny" data-per-page="{PER_PAGE}" data-base-url="{BASE_URL|e('html_attr')}" data-start-name="{START_NAME}" />
+				<input class="button2" value="{L_GO}" type="button" />
+			</li>
+		</ul>
+	</li>
+<!-- ENDIF -->
+<!-- BEGIN pagination -->
+	<!-- IF pagination.S_IS_PREV -->
+	<li class="previous padding-h-5px"><a href="{pagination.PAGE_URL}" rel="prev" role="button">{L_PREVIOUS}</a></li>
+	<!-- ELSEIF pagination.S_IS_CURRENT -->
+	<li class="active padding-h-5px"><span>{pagination.PAGE_NUMBER}</span></li>
+	<!-- ELSEIF pagination.S_IS_ELLIPSIS -->
+	<li class="ellipsis padding-h-5px" role="separator"><span>{L_ELLIPSIS}</span></li>
+	<!-- ELSEIF pagination.S_IS_NEXT -->
+	<li class="next padding-h-5px"><a href="{pagination.PAGE_URL}" rel="next" role="button">{L_NEXT}</a></li>
+	<!-- ELSE -->
+	<li class="padding-h-5px"><a href="{pagination.PAGE_URL}" role="button">{pagination.PAGE_NUMBER}</a></li>
+	<!-- ENDIF -->
+<!-- END pagination -->
+</ul>

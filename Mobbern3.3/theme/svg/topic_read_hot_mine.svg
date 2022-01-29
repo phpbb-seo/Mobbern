@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="27px" height="27px" viewBox="0 0 27 27" enable-background="new 0 0 27 27" xml:space="preserve">
+<g>
+	<g>
+		<rect x="7" y="9" fill-rule="evenodd" clip-rule="evenodd" fill="#F24E06" width="13" height="2"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="7" y="12.875" fill-rule="evenodd" clip-rule="evenodd" fill="#F24E06" width="13" height="2"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="7" y="16.406" fill-rule="evenodd" clip-rule="evenodd" fill="#F24E06" width="6.781" height="2"/>
+	</g>
+</g>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#D8D8D8" d="M24.66,19.106c-0.479-0.978-1.297-1.754-2.314-2.161
+	C22.763,15.876,23,14.717,23,13.5C23,8.253,18.747,4,13.5,4C8.254,4,4,8.253,4,13.5S8.254,23,13.5,23
+	c1.076,0,2.107-0.188,3.072-0.518c0.364,1.039,1.101,1.891,2.057,2.408C17.063,25.598,15.33,26,13.5,26C6.596,26,1,20.402,1,13.5
+	C1,6.596,6.596,1,13.5,1C20.402,1,26,6.596,26,13.5C26,15.519,25.51,17.419,24.66,19.106z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#69A3BC" d="M23.313,21.201c0,1.312-1.063,2.375-2.375,2.375
+	s-2.375-1.063-2.375-2.375s1.063-2.375,2.375-2.375S23.313,19.89,23.313,21.201z"/>
+</svg>

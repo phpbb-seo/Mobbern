@@ -1,0 +1,68 @@
+<style type="text/css">
+/* MTCP CSS */
+
+<!-- IF MBRN_FONT_URL -->
+/* Google Fonts URL: */
+@import url('{MBRN_FONT_URL}');
+<!-- ENDIF -->
+<!-- IF MBRN_BG_IMG -->
+/* Custom background-image: */
+body { background-image: url('{MBRN_BG_IMG}') !important; }
+<!-- ENDIF -->
+<!-- IF MBRN_BG_COLOR -->
+/* Custom background-color: */
+body, #scroll-top { background-color: {MBRN_BG_COLOR} !important; }
+<!-- ENDIF -->
+<!-- IF MBRN_FONT_FAMILY -->
+/* Body Fonts Family: */
+body { font-family: {MBRN_FONT_FAMILY} !important; }
+<!-- ENDIF -->
+<!-- IF MBRN_FONT_SIZE -->
+/* Body Font Size: */
+body { font-size: {MBRN_FONT_SIZE} !important; }
+<!-- ENDIF -->
+<!-- IF MBRN_FONT_HEADERS -->
+/* Headers Fonts Family: */
+h1,h2,h3,h4,h5,h6, .header, .nav.nav-tabs, #tabs { font-family: {MBRN_FONT_HEADERS} !important; }
+<!-- ENDIF -->
+<!-- IF MBRN_LAYOUT_FULL -->
+/* Full-Width Layout: */
+@media (min-width: 979px) {
+  .container { width: 100% !important; }
+  #page-body, .container { padding-left: 30px !important; padding-right: 30px !important; }
+  .full-width .layout-with-right-sidebar #left-column { width: 70%; padding-right: 20px; }
+  .full-width .layout-with-right-sidebar #right-column { width: 30%; max-width: 300px; }
+}
+<!-- ELSE  --><!-- IF MBRN_LAYOUT_WIDTH != null -->
+/* Fixed-Width Layout: */
+.container { width: {MBRN_LAYOUT_WIDTH} !important; }
+@media (min-width: 979px) {
+  .fixed-width .layout-with-right-sidebar #left-column { width: 70%; padding-right: 20px; }
+  .fixed-width .layout-with-right-sidebar #right-column { width: 30%; }
+}
+<!-- ENDIF --><!-- ENDIF -->
+<!-- IF not MBRN_BORDERS && MBRN_BORDERS != null -->
+/* Disable Borders Sitewide: */
+body *:not(.fa) { border: none !important; }
+body dd input { box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15); }
+#main-navbar.navbar-fixed { height: 60px; }
+#main-navbar div.nav-content>.float-right { bottom: -60px !important; }
+ul.topiclist li.row { margin-top: 0 !important; }
+#forum-stats .float-right .panel-body { margin-left: 0!important; }
+.post { margin-bottom: 0 !important }
+<!-- ENDIF -->
+<!-- IF not MBRN_SCROLL_AUTO && MBRN_SCROLL_AUTO != null -->
+#page-body.body-scrolled { padding-top: 45px !important; }
+<!-- ENDIF -->
+<!-- IF not MBRN_MENU_ICONS && MBRN_MENU_ICONS != null -->
+/* Menu Icons : */
+#main-navbar .float-left .nav>li>a .icon { display: none; }
+#main-navbar .float-left .nav>li>a { padding-left: 20px; }
+<!-- ENDIF -->
+<!-- IF not MBRN_MENU_CIRCLES && MBRN_MENU_CIRCLES != null -->
+/* Menu Icons : */
+#main-navbar .float-left .nav>li>a .icon:before { border: none; }
+<!-- ENDIF -->
+
+/* END: MTCP CSS */
+</style>
