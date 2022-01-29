@@ -14,6 +14,7 @@
 
 			<ul class="topiclist">
 				<li class="header">
+					<!-- EVENT forumlist_body_category_header_row_prepend -->										  
 					<dl class="icon">
 						<dt>
 						 <i class="fa fa-file-text icon"></i>
@@ -25,6 +26,7 @@
 						<dd class="lastpost"><span>{L_LAST_POST}</span></dd>
 						<dd class="collapse-button" title="Toggle Panel" data-toggle="collapse" data-target="#collapsable-forum-{forumrow.FORUM_ID}"><i class="fa fa-chevron-circle-up"></i></dd>
 					</dl>
+					<!-- EVENT forumlist_body_category_header_row_append -->										 
 				</li>
 			</ul>
 			
@@ -46,8 +48,9 @@
 					<div class="list-inner">
 						<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED --><!-- <a class="feed-icon-forum" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}"><i class="fa fa-rss"></i> {L_FEED}</a> --><!-- ENDIF -->
 
+						<!-- EVENT forumlist_body_forum_image_before -->							   
 						<!-- IF forumrow.FORUM_IMAGE --><span class="forum-image">{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
-
+                        <!-- EVENT forumlist_body_forum_image_after -->
 						<a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a>
 						<!-- IF forumrow.FORUM_DESC --><br />{forumrow.FORUM_DESC}<!-- ENDIF -->
 
@@ -62,7 +65,7 @@
 							<br /><strong>{forumrow.L_SUBFORUM_STR}{L_COLON}</strong>
 
 							<!-- BEGIN subforum -->
-								<a href="{forumrow.subforum.U_SUBFORUM}" class="subforum<!-- IF forumrow.subforum.S_UNREAD --> unread<!-- ELSE --> read<!-- ENDIF -->" title="<!-- IF forumrow.subforum.UNREAD -->{L_UNREAD_POSTS}<!-- ELSE -->{L_NO_UNREAD_POSTS}<!-- ENDIF -->">{forumrow.subforum.SUBFORUM_NAME}</a>
+								<!-- EVENT forumlist_body_subforum_link_prepend --><a href="{forumrow.subforum.U_SUBFORUM}" class="subforum<!-- IF forumrow.subforum.S_UNREAD --> unread<!-- ELSE --> read<!-- ENDIF -->" title="<!-- IF forumrow.subforum.UNREAD -->{L_UNREAD_POSTS}<!-- ELSE -->{L_NO_UNREAD_POSTS}<!-- ENDIF -->">{forumrow.subforum.SUBFORUM_NAME}</a>
 								<!-- IF not forumrow.subforum.S_LAST_ROW -->{L_COMMA_SEPARATOR}<!-- ENDIF -->
 							<!-- END subforum -->
 
@@ -101,13 +104,21 @@
 							<!-- EVENT forumlist_body_last_post_title_prepend -->
 							<a href="{forumrow.U_LAST_POST}" title="{forumrow.LAST_POST_SUBJECT}" class="lastsubject">{forumrow.LAST_POST_SUBJECT_TRUNCATED}</a> <br />
 						<!-- ENDIF --> 
-						{L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}
+						         {L_POST_BY_AUTHOR} <!-- EVENT forumlist_body_last_poster_username_prepend -->{forumrow.LAST_POSTER_FULL}<!-- EVENT forumlist_body_last_poster_username_append -->
 							<!-- IF not S_IS_BOT -->
-							<a href="{forumrow.U_LAST_POST}"><i class="icon fa fa-external-link-square"></i></a>
-						<!-- ENDIF --><br />{forumrow.LAST_POST_TIME}
-						<!-- ELSE -->{L_NO_POSTS}&nbsp;<!-- ENDIF -->
+							<a href="{forumrow.U_LAST_POST}" title="{L_VIEW_LATEST_POST}">
+							    <i class="icon fa fa-external-link-square"></i><span class="sr-only">{L_VIEW_LATEST_POST}</span>
+						<br /><time datetime="{forumrow.LAST_POST_TIME_RFC3339}">{forumrow.LAST_POST_TIME}</time>
+							<!-- ELSE -->
+							{% if forumrow.U_UNAPPROVED_TOPICS %}
+								{{ lang('TOPIC_UNAPPROVED_FORUM', forumrow.TOPICS) }}
+							{% else %}
+								{{ lang('NO_POSTS') }}
+							{% endif %}
+							<!-- ENDIF -->
 					 </span>
 					</dd>
+				 <!-- ELSE -->
 				<!-- ENDIF -->
 			</dl>
 			<!-- EVENT forumlist_body_forum_row_append -->
