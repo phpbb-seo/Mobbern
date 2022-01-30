@@ -4,6 +4,7 @@
       <span class="right-box text-xs"><i class="fa fa-sort"></i>&nbsp; <a href="#review" onclick="viewableArea(getElementById('topicreview'), true); var rev_text = getElementById('review').getElementsByTagName('a').item(0).firstChild; if (rev_text.data == '{LA_EXPAND_VIEW}'){rev_text.data = '{LA_COLLAPSE_VIEW}'; } else if (rev_text.data == '{LA_COLLAPSE_VIEW}'){rev_text.data = '{LA_EXPAND_VIEW}'};">{L_EXPAND_VIEW}</a></span>
       <i class="fa fa-history"></i> {L_MESSAGE_HISTORY}{L_COLON}
     </h3>
+<!-- EVENT ucp_pm_history_review_before -->	
   </div>
 
   <div class="panel-body">
@@ -29,7 +30,7 @@
               <!-- ENDIF -->
               <a href="{history_row.U_VIEW_MESSAGE}" <!-- IF history_row.S_CURRENT_MSG -->class="current"<!-- ENDIF -->>{history_row.SUBJECT}</a>
             </h3>
-
+			<!-- EVENT ucp_pm_history_post_buttons_list_before -->
             <p class="author">
               {history_row.MINI_POST_IMG} <i class="fa fa-clock-o" title="{L_SENT_AT}"></i> {history_row.SENT_DATE}
               <i class="fa fa-user" title="{L_MESSAGE_BY_AUTHOR}"></i> {history_row.MESSAGE_AUTHOR_FULL}
@@ -47,7 +48,7 @@
     </div>
   </div>
 </div><!-- /.panel-ucp-pmhistory -->
-
+<!-- EVENT ucp_pm_history_review_after -->
 <hr />
 
 <p><a href="#cp-main" class="scroll-link top2"><i class="fa fa-arrow-circle-up"></i>&nbsp;&nbsp;{L_BACK_TO_TOP}</a></p>
