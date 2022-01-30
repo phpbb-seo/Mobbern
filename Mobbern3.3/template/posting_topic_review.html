@@ -33,6 +33,7 @@
 			<div class="postbody-header">
 				<h3><a href="#pr{topic_review_row.POST_ID}">{topic_review_row.POST_SUBJECT}</a></h3>
 
+			<!-- EVENT posting_topic_review_row_post_details_before -->															  
 				<p class="author">
 				<!-- IF S_IS_BOT -->
 				{topic_review_row.MINI_POST_IMG}
@@ -40,15 +41,16 @@
 				<!-- ELSE -->
 				<a href="{topic_review_row.U_MINI_POST}"><i class="fa fa-file"></i></a>
 				<!-- ENDIF -->
-				{L_POST_BY_AUTHOR}
+				{L_POST_BY_AUTHOR}<!-- EVENT posting_topic_review_row_post_author_username_prepend -->
 				<strong>{topic_review_row.POST_AUTHOR_FULL}</strong> &raquo; {topic_review_row.POST_DATE}
 				</p>
+			<!-- EVENT posting_topic_review_row_post_details_after -->				
 				<div class="float-clear"></div>
 			</div><!-- /.postbody-header -->
 
 
 			<div class="content">{topic_review_row.MESSAGE}</div>
-
+			<!-- EVENT posting_topic_review_row_content_after -->
 			<div class="post-opts">
 				<!-- IF (topic_review_row.POSTER_QUOTE and topic_review_row.DECODED_MESSAGE) or topic_review_row.U_MCP_DETAILS -->
 				<ul class="post-buttons">
