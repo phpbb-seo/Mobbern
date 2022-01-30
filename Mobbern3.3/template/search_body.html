@@ -3,6 +3,7 @@
 
 <h2 class="solo">{L_SEARCH}</h2>
 
+<!-- EVENT search_body_form_before -->									  
 <form method="get" action="{S_SEARCH_ACTION}" data-focus="keywords">
 
 <div class="search-panel search-query panel panel-default">
@@ -11,7 +12,9 @@
 	</div>
 
 	<div class="panel-body">
+	<!-- EVENT search_body_search_query_before -->
 	<fieldset>
+	<!-- EVENT search_body_search_query_prepend -->
 	<dl>
 		<dt><label for="keywords">{L_SEARCH_KEYWORDS}{L_COLON}</label><br /><span>{L_SEARCH_KEYWORDS_EXPLAIN}</span></dt>
 		<dd><input type="search" class="inputbox" name="keywords" id="keywords" size="40" title="{L_SEARCH_KEYWORDS}" /></dd>
@@ -23,7 +26,9 @@
 		<dt><label for="author">{L_SEARCH_AUTHOR}{L_COLON}</label><br /><span>{L_SEARCH_AUTHOR_EXPLAIN}</span></dt>
 		<dd><input type="search" class="inputbox" name="author" id="author" size="40" title="{L_SEARCH_AUTHOR}" /></dd>
 	</dl>
+	<!-- EVENT search_body_search_query_append -->
 	</fieldset>
+	<!-- EVENT search_body_search_query_after -->											  
 
 	</div>
 </div><!-- /.search-query -->
@@ -36,7 +41,9 @@
 	</div>
 
 	<div class="panel-body">
+	<!-- EVENT search_body_search_options_before -->
 	<fieldset>
+	<!-- EVENT search_body_search_options_prepend -->
 	<dl>
 		<dt><label for="search_forum">{L_SEARCH_FORUMS}{L_COLON}</label><br /><span>{L_SEARCH_FORUMS_EXPLAIN}</span></dt>
 		<dd><select name="fid[]" id="search_forum" multiple="multiple" size="8" title="{L_SEARCH_FORUMS}">{S_FORUM_OPTIONS}</select></dd>
@@ -58,7 +65,11 @@
 		<dd><label for="sf4"><input type="radio" name="sf" id="sf4" value="firstpost" /> {L_SEARCH_FIRST_POST}</label></dd>
 	</dl>
 
-	<hr class="separator" />
+	<!-- EVENT search_body_search_options_append -->
+
+	<hr class="dashed" />
+
+	<!-- EVENT search_body_search_display_options_prepend -->
 
 	<dl>
 		<dt><label for="show_results1">{L_DISPLAY_RESULTS}{L_COLON}</label></dt>
@@ -85,7 +96,9 @@
 		<dt><label>{L_RETURN_FIRST}{L_COLON}</label></dt>
 		<dd><select name="ch" title="{L_RETURN_FIRST}">{S_CHARACTER_OPTIONS}</select> {L_POST_CHARACTERS}</dd>
 	</dl>
+	<!-- EVENT search_body_search_display_options_append -->
 	</fieldset>
+	<!-- EVENT search_body_search_options_after -->
 
 	</div>
 </div><!-- /.search-query -->
@@ -102,9 +115,10 @@
 </div><!-- /.post-buttons -->
 
 </form>
+<!-- EVENT search_body_form_after -->
 
 
-
+<!-- EVENT search_body_recent_search_before -->											   
 <!-- IF .recentsearch -->
 <div class="forumbg forumbg-table panel-search-recent">
 
@@ -134,6 +148,6 @@
 
 </div><!-- /.panel-search-recent -->
 <!-- ENDIF -->
-
+<!-- EVENT search_body_recent_search_after -->
 
 <!-- INCLUDE overall_footer.html -->
