@@ -12,7 +12,7 @@
 	<div class="action-bar top">
 		<ul class="linklist">
 			<li class="text">
-			<!-- IF TOTAL_TOPICS --> {TOTAL_TOPICS}<!-- ENDIF --></li>
+			 {TOTAL_TOPICS}</li>
 
 			<li class="pagination">
 
@@ -57,12 +57,13 @@
 					<!-- ENDIF -->
 
 					<div class="list-inner">
+					<!-- EVENT topiclist_row_prepend -->
 					<!-- IF topicrow.S_SELECT_TOPIC -->
 					<a href="{topicrow.U_SELECT_TOPIC}" class="topictitle">[ {L_SELECT_MERGE} ]</a>&nbsp;&nbsp;
 					<!-- ENDIF -->
-
+                    <!-- EVENT mcp_forum_topic_title_before -->
 					<a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a>
-
+					<!-- EVENT mcp_forum_topic_title_after -->
 					<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
 					<a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a>
 					<!-- ENDIF -->
@@ -80,10 +81,10 @@
 					<!-- ENDIF -->
 
 					<br />
-
+                    <!-- EVENT topiclist_row_topic_title_after -->
 					<div class="responsive-show" style="display: none;">
 						<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->
-						{L_LAST_POST} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL} &laquo; {topicrow.LAST_POST_TIME}<br />
+						{L_LAST_POST} {L_POST_BY_AUTHOR} {% EVENT mcp_forum_last_post_author_username_prepend %} {topicrow.LAST_POST_AUTHOR_FULL} &laquo; {topicrow.LAST_POST_TIME}<br />
 					</div>
 
 					<span class="responsive-show left-box" style="display: none;">{L_REPLIES}{L_COLON} <strong>{topicrow.REPLIES}</strong></span>
@@ -105,9 +106,11 @@
 
 					<div class="responsive-hide">
 						<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->
+						{% EVENT topiclist_row_topic_by_author_before %}					  
 						{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
+						{% EVENT topiclist_row_topic_by_author_after %}						 
 					</div>
-
+                <!-- EVENT topiclist_row_append -->
 				</dt>
 
 				<dd class="posts">{topicrow.REPLIES} <dfn>{L_REPLIES}</dfn></dd>
@@ -151,6 +154,7 @@
 	<hr />
 
 	<div class="action-bar bottom">
+		<!-- INCLUDE display_options.html -->
 		<ul class="linklist">
 			<li class="text"><!-- IF TOTAL_TOPICS --> {TOTAL_TOPICS}<!-- ENDIF --></li>
 
@@ -167,6 +171,7 @@
 
 </div>
 
+<!-- EVENT mcp_forum_actions_before -->									   
 <fieldset class="display-actions">
 	<!-- IF not S_MERGE_SELECT -->
 
@@ -191,6 +196,7 @@
 			<option value="make_announce">{L_MAKE_ANNOUNCE}</option>
 			<option value="make_global">{L_MAKE_GLOBAL}</option>
 		<!-- ENDIF -->
+		<!-- EVENT mcp_forum_actions_append -->
 	</select>
 
 	<input class="button2" type="submit" value="{L_SUBMIT}" />
@@ -198,7 +204,7 @@
 	<!-- ENDIF -->
 	{S_FORM_TOKEN}
 </fieldset>
-
+<!-- EVENT mcp_forum_actions_after -->
 </form>
 
 
