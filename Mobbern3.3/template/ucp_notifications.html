@@ -31,7 +31,7 @@
 								<!-- IF notification_types.EXPLAIN --><br />&nbsp; &nbsp;{notification_types.EXPLAIN}<!-- ENDIF -->
 							</td>
 							<!-- BEGIN notification_methods -->
-								<td class="mark"><input type="checkbox" name="{notification_types.TYPE}_{notification_methods.METHOD}"<!-- IF notification_methods.SUBSCRIBED --> checked="checked"<!-- ENDIF --> /></td>
+								<td class="mark"><input type="checkbox" name="{notification_types.TYPE}_{notification_types.notification_methods.METHOD}"<!-- IF notification_types.notification_methods.SUBSCRIBED --> checked="checked"<!-- ENDIF --><!-- IF not notification_types.notification_methods.AVAILABLE --> disabled="disabled"<!-- ENDIF --> /></td>
 							<!-- END notification_methods -->
 							<td class="mark"><input type="checkbox" name="{notification_types.TYPE}_notification"<!-- IF notification_types.SUBSCRIBED --> checked="checked"<!-- ENDIF --> /></td>
 						</tr>
@@ -81,11 +81,11 @@
 
 										<div class="notifications">
 											<!-- IF notification_list.URL --><a href="<!-- IF notification_list.UNREAD -->{notification_list.U_MARK_READ}<!-- ELSE -->{notification_list.URL}<!-- ENDIF -->"><!-- ENDIF -->
-											<p class="notifications-title">{notification_list.FORMATTED_TITLE}<!-- IF notification_list.REFERENCE --> {notification_list.REFERENCE}<!-- ENDIF --></p>
-											<!-- IF notification_list.URL --></a><!-- ENDIF -->				
+											<p class="notifications_title">{notification_list.FORMATTED_TITLE}<!-- IF notification_list.REFERENCE --> {notification_list.REFERENCE}<!-- ENDIF --></p>
+											<!-- IF notification_list.URL --></a><!-- ENDIF -->
 											<!-- IF notification_list.FORUM --><p class="notifications_forum">{notification_list.FORUM}</p><!-- ENDIF -->
 											<!-- IF notification_list.REASON --><p class="notifications_reason">{notification_list.REASON}</p><!-- ENDIF -->
-											<p class="notifications-time">{notification_list.TIME}</p>
+											<p class="notifications_time">{notification_list.TIME}</p>
 										</div>
 									</div>
 								</dt>
