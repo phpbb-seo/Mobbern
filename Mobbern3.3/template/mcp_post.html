@@ -36,11 +36,13 @@
 		<form method="post" id="mcp_report" action="{S_CLOSE_ACTION}">
 
 		<fieldset class="submit-buttons">
+			{% EVENT mcp_post_report_buttons_top_before %}
 			<!-- IF not S_REPORT_CLOSED -->
 			<input class="button1" type="submit" value="{L_CLOSE_REPORT}" name="action[close]" /> &nbsp;
 			<!-- ENDIF -->
 
 			<input class="button2" type="submit" value="{L_DELETE_REPORT}" name="action[delete]" />
+		    {% EVENT mcp_post_report_buttons_top_after %}
 			<input type="hidden" name="report_id_list[]" value="{REPORT_ID}" />
 			{S_FORM_TOKEN}
 
@@ -122,18 +124,19 @@
 		<!-- ENDIF -->
 
 
-		<!-- IF S_MESSAGE_REPORTED -->
+		{% if S_POST_REPORTED and not S_MCP_REPORT %}
 			<p class="post-notice reported">
 				<i class="fa fa-exclamation-triangle"></i>&nbsp;
 				<a href="{U_MCP_REPORT}"><strong>{L_MESSAGE_REPORTED}</strong></a>
 			</p>
-		<!-- ENDIF -->
-
+		{% endif %}
+		{% EVENT mcp_post_text_before %}
 
 		<div class="content" id="post_details">
 			{POST_PREVIEW}
 		</div>
 
+			{% EVENT mcp_post_text_after %}							 
 
 		<!-- IF S_HAS_ATTACHMENTS -->
 			<dl class="attachbox">
@@ -171,7 +174,7 @@
 </div><!-- /.panel-mcp-post -->
 
 
-<!-- IF S_CAN_LOCK_POST or S_CAN_DELETE_POST or S_CAN_CHGPOSTER -->
+<!-- IF S_CAN_LOCK_POST or S_CAN_DELETE_POST or S_CAN_CHGPOSTER or S_MCP_POST_ADDITIONAL_OPTS -->
 	<div class="panel panel-default panel-mcp-postmod">
 
 		<div class="panel-heading">
@@ -199,6 +202,7 @@
 			</form>
 		<!-- ENDIF -->
 
+		<!-- EVENT mcp_post_additional_options -->											
 
 		<!-- IF S_CAN_LOCK_POST or S_CAN_DELETE_POST -->
 			<form method="post" id="mcp" action="{U_MCP_ACTION}">
@@ -354,6 +358,9 @@
 			<!-- END userrow -->
 			</tbody>
 		</table>
+		<div class="pagination">
+				<!-- INCLUDE pagination.html -->
+		</div>				   									
 
 		<table cellspacing="1" class="table1">
 			<thead>
@@ -376,8 +383,29 @@
 			</tbody>
 		</table>
 
-		<p><a href="{U_LOOKUP_ALL}#ip">{L_LOOKUP_ALL}</a></p>
+			{% if U_LOOKUP_ALL %}
+				<div class="buttons">
+					<p><a href="{U_LOOKUP_ALL}#ip">{L_LOOKUP_ALL}</a></p>
+				</div>
+			{% endif %}
 
+			<div class="pagination">
+				<ul>
+				<!-- BEGIN pagination_ips -->
+					<!-- IF pagination_ips.S_IS_PREV -->
+					<li class="arrow previous"><a class="button button-icon-only" href="{pagination_ips.PAGE_URL}" rel="prev" role="button"><i class="icon fa-chevron-{S_CONTENT_FLOW_BEGIN} fa-fw" aria-hidden="true"></i><span class="sr-only">{L_PREVIOUS}</span></a></li>
+					<!-- ELSEIF pagination_ips.S_IS_CURRENT -->
+					<li class="active"><span>{pagination_ips.PAGE_NUMBER}</span></li>
+					<!-- ELSEIF pagination_ips.S_IS_ELLIPSIS -->
+					<li class="ellipsis" role="separator"><span>{L_ELLIPSIS}</span></li>
+					<!-- ELSEIF pagination_ips.S_IS_NEXT -->
+					<li class="arrow next"><a class="button button-icon-only" href="{pagination_ips.PAGE_URL}" rel="next" role="button"><i class="icon fa-chevron-{S_CONTENT_FLOW_END} fa-fw" aria-hidden="true"></i><span class="sr-only">{L_NEXT}</span></a></li>
+					<!-- ELSE -->
+					<li><a class="button" href="{pagination_ips.PAGE_URL}" role="button">{pagination_ips.PAGE_NUMBER}</a></li>
+					<!-- ENDIF -->
+				<!-- END pagination_ips -->
+				</ul>
+			</div>
 		</div>
 	</div><!-- /.panel-mcp-ip -->
 	<!-- ENDIF -->
