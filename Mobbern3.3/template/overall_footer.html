@@ -1,4 +1,4 @@
-
+		<!-- EVENT overall_footer_content_after -->
   <div class="footer-opts">
 
     <ul class="linklist">
@@ -130,7 +130,38 @@
 <script type="text/javascript" src="{T_ASSETS_PATH}/javascript/core.js?assets_version={T_ASSETS_VERSION}"></script>
 <!-- INCLUDEJS forum_fn.js -->
 <!-- INCLUDEJS ajax.js -->
+<!-- IF S_COOKIE_NOTICE -->
+	<script src="{T_ASSETS_PATH}/cookieconsent/cookieconsent.min.js?assets_version={T_ASSETS_VERSION}"></script>
+					 
+																				 
 
+							 
+																					 
+
+					  
+	<script>
+		if (typeof window.cookieconsent === "object") {
+			window.addEventListener("load", function(){
+				window.cookieconsent.initialise({
+					"palette": {
+						"popup": {
+							"background": "#0F538A"
+						},
+						"button": {
+							"background": "#E5E5E5"
+						}
+					},
+					"theme": "classic",
+					"content": {
+						"message": "{LA_COOKIE_CONSENT_MSG}",
+						"dismiss": "{LA_COOKIE_CONSENT_OK}",
+						"link": "{LA_COOKIE_CONSENT_INFO}",
+						"href": "{UA_PRIVACY}"
+					}
+				});
+			});
+		}
+	</script>
 
 
 <!-- BOOTSTRAP JS -->
@@ -169,5 +200,6 @@ $(document).ready(function(){
 <!-- IF S_PLUPLOAD --><!-- INCLUDE plupload.html --><!-- ENDIF -->
 {$SCRIPTS}
 
+<!-- EVENT overall_footer_body_after -->
 </body>
 </html>
