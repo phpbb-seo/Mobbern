@@ -42,6 +42,7 @@
 
 		<!-- IF S_DISPLAY_FULL_LOGIN -->
 		<dl>
+			<dt>&nbsp;</dt>	  
 			<!-- IF S_AUTOLOGIN_ENABLED --><dd><label for="autologin"><input type="checkbox" name="autologin" id="autologin" tabindex="4" /> {L_LOG_ME_IN}</label></dd><!-- ENDIF -->
 
 			<dd><label for="viewonline"><input type="checkbox" name="viewonline" id="viewonline" tabindex="5" /> {L_HIDE_ME}</label></dd>
@@ -50,6 +51,7 @@
 
 
 		{S_LOGIN_REDIRECT}
+		{S_FORM_TOKEN_LOGIN}			  
 		<dl>
 			<dt>&nbsp;</dt>
 			<dd>{S_HIDDEN_FIELDS}<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="button1" /></dd>
