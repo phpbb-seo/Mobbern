@@ -23,7 +23,9 @@
         <!-- IF AUTHOR_AVATAR --><a href="{U_MESSAGE_AUTHOR}" class="avatar">{AUTHOR_AVATAR}</a><!-- ENDIF -->
         <!-- EVENT ucp_pm_viewmessage_avatar_after -->
       </div>
-      {MESSAGE_AUTHOR_FULL}
+			{% EVENT ucp_pm_viewmessage_author_full_before %}
+			{MESSAGE_AUTHOR_FULL}
+			{% EVENT ucp_pm_viewmessage_author_full_after %}												   
     </dt>
 
     <!-- IF RANK_TITLE or RANK_IMG --><dd class="profile-rank">{RANK_TITLE}<!-- IF RANK_TITLE and RANK_IMG --><br /><!-- ENDIF -->{RANK_IMG}</dd><!-- ENDIF -->
@@ -176,6 +178,7 @@
   </div>
 </div>
 
+<!-- EVENT ucp_pm_viewmessage_options_before -->												
 <!-- IF S_VIEW_MESSAGE -->
 <fieldset class="display-options">
   <!-- IF U_PREVIOUS_PM -->
