@@ -18,7 +18,9 @@
 <h2 class="posting-title">{L_TITLE}</h2>
 
 <div class="panel" id="pmheader-postingbox">
+	<!-- EVENT posting_pm_layout_include_pm_header_before -->
 	<!-- INCLUDE posting_pm_header.html -->
+	<!-- EVENT posting_pm_layout_include_pm_header_after -->
 </div>
 
 <div class="panel panel-postingpm-editor" id="postingbox">
@@ -27,7 +29,7 @@
 </div><!-- /.panel-postingpm-editor -->
 
 
-<!-- IF S_SHOW_ATTACH_BOX --><!-- INCLUDE posting_attach_body.html --><!-- ENDIF -->
+<!-- IF S_SHOW_ATTACH_BOX and FILTERS --><!-- INCLUDE posting_attach_body.html --><!-- ENDIF -->
 
 <!-- IF S_DISPLAY_REVIEW --><!-- INCLUDE posting_topic_review.html --><!-- ENDIF -->
 
