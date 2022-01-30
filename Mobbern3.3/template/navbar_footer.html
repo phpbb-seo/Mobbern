@@ -5,7 +5,9 @@
 		<li class="small-icon icon-home breadcrumbs">
 
 			<!-- IF U_SITE_HOME -->
+				{% apply spaceless %}						 
 			<span class="crumb"><a href="{U_SITE_HOME}" data-navbar-reference="home">{L_SITE_HOME}</a></span>
+				{% endapply %}				  
 			<!-- ENDIF -->
 
 			<!-- EVENT overall_footer_breadcrumb_prepend -->
