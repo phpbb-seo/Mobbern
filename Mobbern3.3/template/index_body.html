@@ -22,6 +22,7 @@
 
 <!-- INCLUDE forumlist_body.html -->
 
+<!-- EVENT index_body_forumlist_body_after -->											  
 
 
 <!-- IF 0 -->
@@ -39,6 +40,7 @@
 			<!-- ENDIF -->
 			<input type="submit" name="login" value="{L_LOGIN}" class="button2" />
 			{S_LOGIN_REDIRECT}
+			{S_FORM_TOKEN_LOGIN}	   
 		</fieldset>
 	</form>
 	<!-- ENDIF -->
@@ -70,7 +72,7 @@
 
 	</div>
 	<!-- ENDIF -->
-
+<!-- EVENT index_body_block_online_append -->
 
 
 	<!-- IF NEWEST_USER -->
@@ -96,7 +98,7 @@
 	<!-- ENDIF -->
 
 	<br class="float-clear" />
-
+<!-- EVENT index_body_birthday_block_before -->
 	<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->
 	 <div id="birthdays-block" class="panel panel-default birthday-list">
 	  
