@@ -1,7 +1,7 @@
 <!-- INCLUDE overall_header.html -->
 
-<script type="text/javascript">
-// <![CDATA[
+<script>
+			
 	/**
 	* Change language
 	*/
@@ -11,11 +11,25 @@
 		document.forms['register'].change_lang.value = lang_iso;
 		document.forms['register'].submit.click();
 	}
-// ]]>
+	  
 </script>
 
 
+{% if PROVIDER_TEMPLATE_FILE %}
+	<div class="panel">
+		<div class="inner">
 
+			<h2>{{ SITENAME }} - {{ lang('OAUTH_REGISTRATION') }}</h2>
+
+			{% include PROVIDER_TEMPLATE_FILE %}
+
+												
+
+		</div>
+										
+	</div>
+{% endif %}
+																		 
 <form method="post" action="{S_UCP_ACTION}" id="register">
 
 <div class="panel panel-default register-panel">
@@ -116,6 +130,7 @@
 </div>
 <!-- ENDIF -->
 
+<!-- EVENT ucp_register_buttons_before -->										  
 
 
 <div class="panel">
