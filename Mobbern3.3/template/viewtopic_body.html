@@ -1,11 +1,11 @@
 <!-- INCLUDE overall_header.html -->
-
+<!-- EVENT viewtopic_topic_title_before -->
 
 <h2 class="topic-title">
 
   <!-- EVENT viewtopic_topic_title_prepend -->
 
-  <a href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a>
+<a href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a>
 
   <!-- EVENT viewtopic_topic_title_append -->
 
@@ -56,7 +56,7 @@
     <!-- IF S_DISPLAY_SEARCHBOX -->
 
     <!-- INCLUDE viewtopic_topic_tools.html -->
-
+	<!-- EVENT viewtopic_dropdown_top_custom -->
     <div class="search-box">
       <form method="get" id="topic-search" action="{S_SEARCHBOX_ACTION}">
       <fieldset>
@@ -157,6 +157,7 @@
 
 
 <div class="posts-wrapper">
+<!-- EVENT viewtopic_body_poll_after -->												
   <!-- BEGIN postrow -->
 
   <!-- EVENT viewtopic_body_postrow_post_before -->
@@ -238,7 +239,7 @@
 
                 <li>
                   <a href="<!-- IF postrow.contact.U_CONTACT -->{postrow.contact.U_CONTACT}<!-- ELSE -->{postrow.U_POST_AUTHOR}<!-- ENDIF -->" title="{postrow.contact.NAME}"<!-- IF $S_LAST_CELL --> class="last-cell"<!-- ENDIF --><!-- IF postrow.contact.ID eq 'jabber' --> onclick="popup(this.href, 750, 320); return false;"<!-- ENDIF -->>
-                    <i class="fa contact-icon {postrow.contact.ID}-icon"></i>&nbsp;&nbsp; {postrow.contact.NAME}
+                    {% EVENT viewtopic_body_contact_icon_prepend %}<i class="fa contact-icon {postrow.contact.ID}-icon"></i>&nbsp;&nbsp; {postrow.contact.NAME}{% EVENT viewtopic_body_contact_icon_append %}
                   </a>
                 </li>
 
@@ -368,8 +369,10 @@
 
        <!-- EVENT viewtopic_body_postrow_post_notices_after -->
 
-       <!-- IF postrow.SIGNATURE --><div id="sig{postrow.POST_ID}" class="signature">{postrow.SIGNATURE}</div><!-- ENDIF -->
-
+			{% EVENT viewtopic_body_postrow_signature_before %}
+				{% if postrow.SIGNATURE %}<div id="sig{{ postrow.POST_ID }}" class="signature">{{ postrow.SIGNATURE }}</div>{% endif %}
+			{% EVENT viewtopic_body_postrow_signature_after %}
+			
        <!-- EVENT viewtopic_body_postrow_post_content_footer -->
 
       </div><!-- /.postbody-container -->
@@ -503,7 +506,7 @@
 
 <!-- IF S_DISPLAY_ONLINE_LIST and S_FORUM_RULES -->
   <div id="forum-stats" class="viewforum-stats view-topic">
-
+{% EVENT viewtopic_body_online_list_before %}
   <!-- IF S_DISPLAY_ONLINE_LIST -->
   <div class="panel panel-default float-left stat-block online-list">
     <div class="panel-heading">
