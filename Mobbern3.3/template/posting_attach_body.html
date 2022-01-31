@@ -7,8 +7,8 @@
   <fieldset class="fields2" id="attach-panel-basic">
   <dl>
     <dt><label for="fileupload">{L_FILENAME}{L_COLON}</label></dt>
-    <dd>
-      <input type="file" name="fileupload" id="fileupload" maxlength="{FILESIZE}" value="" class="inputbox autowidth" /> 
+    <dd>	  
+	  <input type="file" accept="{{ ALLOWED_ATTACHMENTS }}" name="fileupload" id="fileupload" class="inputbox autowidth" />
       <input type="submit" name="add_file" value="{L_ADD_FILE}" class="button2" onclick="upload = true;" />
     </dd>
   </dl>
