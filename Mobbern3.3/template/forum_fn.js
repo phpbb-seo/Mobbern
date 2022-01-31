@@ -1,3 +1,5 @@
+/* global phpbb */
+
 /**
 * phpBB3 forum functions
 */
@@ -32,12 +34,12 @@ function popup(url, width, height, name) {
 function pageJump(item) {
 	'use strict';
 
-	var page = item.val(),
+	var page = parseInt(item.val(), 10),
 		perPage = item.attr('data-per-page'),
 		baseUrl = item.attr('data-base-url'),
 		startName = item.attr('data-start-name');
 
-	if (page !== null && !isNaN(page) && page == Math.floor(page) && page > 0) {
+	if (page !== null && !isNaN(page) && page === Math.floor(page) && page > 0) {
 		if (baseUrl.indexOf('?') === -1) {
 			document.location.href = baseUrl + '?' + startName + '=' + ((page - 1) * perPage);
 		} else {
@@ -55,7 +57,7 @@ function marklist(id, name, state) {
 
 	jQuery('#' + id + ' input[type=checkbox][name]').each(function() {
 		var $this = jQuery(this);
-		if ($this.attr('name').substr(0, name.length) === name) {
+		if ($this.attr('name').substr(0, name.length) === name && !$this.prop('disabled')) {
 			$this.prop('checked', state);
 		}
 	});
@@ -124,7 +126,7 @@ function activateSubPanel(p, panels) {
 
 	var i, showPanel;
 
-	if (typeof(p) === 'string') {
+	if (typeof p === 'string') {
 		showPanel = p;
 	}
 	$('input[name="show_panel"]').val(showPanel);
@@ -154,7 +156,14 @@ function selectCode(a) {
 		// Safari and Chrome
 		if (s.setBaseAndExtent) {
 			var l = (e.innerText.length > 1) ? e.innerText.length - 1 : 1;
-			s.setBaseAndExtent(e, 0, e, l);
+			try {
+				s.setBaseAndExtent(e, 0, e, l);
+			} catch (error) {
+				r = document.createRange();
+				r.selectNodeContents(e);
+				s.removeAllRanges();
+				s.addRange(r);
+			}
 		}
 		// Firefox and Opera
 		else {
@@ -183,37 +192,6 @@ function selectCode(a) {
 		r.moveToElementText(e);
 		r.select();
 	}
-}
-
-/**
-* Play quicktime file by determining it's width/height
-* from the displayed rectangle area
-*/
-function play_qt_file(obj) {
-	'use strict';
-
-	var rectangle = obj.GetRectangle();
-	var width, height;
-
-	if (rectangle) {
-		rectangle = rectangle.split(',');
-		var x1 = parseInt(rectangle[0], 10);
-		var x2 = parseInt(rectangle[2], 10);
-		var y1 = parseInt(rectangle[1], 10);
-		var y2 = parseInt(rectangle[3], 10);
-
-		width = (x1 < 0) ? (x1 * -1) + x2 : x2 - x1;
-		height = (y1 < 0) ? (y1 * -1) + y2 : y2 - y1;
-	} else {
-		width = 200;
-		height = 0;
-	}
-
-	obj.width = width;
-	obj.height = height + 16;
-
-	obj.SetControllerVisible(true);
-	obj.Play();
 }
 
 var inAutocomplete = false;
@@ -277,8 +255,7 @@ jQuery(function($) {
 /**
 * Functions for user search popup
 */
-function insertUser(formId, value)
-{
+function insertUser(formId, value) {
 	'use strict';
 
 	var $form = jQuery(formId),
@@ -286,7 +263,7 @@ function insertUser(formId, value)
 		fieldName = $form.attr('data-field-name'),
 		item = opener.document.forms[formName][fieldName];
 
-	if (item.value.length && item.type == 'textarea') {
+	if (item.value.length && item.type === 'textarea') {
 		value = item.value + '\n' + value;
 	}
 
@@ -296,11 +273,9 @@ function insertUser(formId, value)
 function insert_marked_users(formId, users) {
 	'use strict';
 
-	for (var i = 0; i < users.length; i++) {
-		if (users[i].checked) {
-			insertUser(formId, users[i].value);
-		}
-	}
+	$(users).filter(':checked').each(function() {
+		insertUser(formId, this.value);
+	});
 
 	window.close();
 }
@@ -319,7 +294,7 @@ function parseDocument($container) {
 	'use strict';
 
 	var test = document.createElement('div'),
-		oldBrowser = (typeof test.style.borderRadius == 'undefined'),
+		oldBrowser = (typeof test.style.borderRadius === 'undefined'),
 		$body = $('body');
 
 	/**
@@ -357,10 +332,13 @@ function parseDocument($container) {
 	/**
 	* Adjust HTML code for IE8 and older versions
 	*/
-	if (oldBrowser) {
-		// Fix .linklist.bulletin lists
-		$container.find('ul.linklist.bulletin > li:first-child, ul.linklist.bulletin > li.rightside:last-child').addClass('no-bulletin');
-	}
+	// if (oldBrowser) {
+	// 	// Fix .linklist.bulletin lists
+	// 	$container
+	// 		.find('ul.linklist.bulletin > li')
+	// 		.filter(':first-child, .rightside:last-child')
+	// 		.addClass('no-bulletin');
+	// }
 
 	/**
 	* Resize navigation (breadcrumbs) block to keep all links on same line
@@ -376,12 +354,19 @@ function parseDocument($container) {
 
 		function resize() {
 			var width = 0,
-				diff = $left.outerWidth(true) - $left.width();
+				diff = $left.outerWidth(true) - $left.width(),
+				minWidth = Math.max($this.width() / 3, 240),
+				maxWidth;
 
 			$right.each(function() {
-				width += $(this).outerWidth(true);
+				var $this = $(this);
+				if ($this.is(':visible')) {
+					width += $this.outerWidth(true);
+				}
 			});
-			$left.css('max-width', Math.floor($this.width() - width - diff) + 'px');
+
+			maxWidth = $this.width() - width - diff;
+			$left.css('max-width', Math.floor(Math.max(maxWidth, minWidth)) + 'px');
 		}
 
 		resize();
@@ -410,9 +395,15 @@ function parseDocument($container) {
 		// Function that checks breadcrumbs
 		function check() {
 			var height = $this.height(),
-				width = $body.width();
+				width;
 
-			maxHeight = parseInt($this.css('line-height'));
+			// Test max-width set in code for .navlinks above
+			width = parseInt($this.css('max-width'), 10);
+			if (!width) {
+				width = $body.width();
+			}
+
+			maxHeight = parseInt($this.css('line-height'), 10);
 			$links.each(function() {
 				if ($(this).height() > 0) {
 					maxHeight = Math.max(maxHeight, $(this).outerHeight(true));
@@ -439,8 +430,8 @@ function parseDocument($container) {
 				return;
 			}
 
-			for (var i = 0; i < classesLength; i ++) {
-				for (var j = length - 1; j >= 0; j --) {
+			for (var i = 0; i < classesLength; i++) {
+				for (var j = length - 1; j >= 0; j--) {
 					$links.eq(j).addClass('wrapped ' + classes[i]);
 					if ($this.height() <= maxHeight) {
 						return;
@@ -457,7 +448,9 @@ function parseDocument($container) {
 	/**
 	* Responsive link lists
 	*/
-	$container.find('.linklist:not(.navlinks, [data-skip-responsive]), .postbody .post-buttons:not([data-skip-responsive])').each(function() {
+	var selector = '.linklist:not(.navlinks, [data-skip-responsive]),' +
+		'.postbody .post-buttons:not([data-skip-responsive])';
+	$container.find(selector).each(function() {
 		var $this = $(this),
 			filterSkip = '.breadcrumbs, [data-skip-responsive]',
 			filterLast = '.edit-icon, .quote-icon, [data-last-responsive]',
@@ -465,9 +458,9 @@ function parseDocument($container) {
 			$linksNotSkip = $linksAll.not(filterSkip), // All items that can potentially be hidden
 			$linksFirst = $linksNotSkip.not(filterLast), // The items that will be hidden first
 			$linksLast = $linksNotSkip.filter(filterLast), // The items that will be hidden last
-			persistent = $this.attr('id') == 'nav-main', // Does this list already have a menu (such as quick-links)?
-			html = '<li class="responsive-menu hidden"><a href="javascript:void(0);" class="responsive-menu-link">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner" /></div><ul class="dropdown-contents" /></div></li>',
-			slack = 3; // Vertical slack space (in pixels). Determines how sensitive the script is in determining whether a line-break has occured.
+			persistent = $this.attr('id') === 'nav-main', // Does this list already have a menu (such as quick-links)?
+			html = '<li class="responsive-menu hidden"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents" /></div></li>',
+			slack = 3; // Vertical slack space (in pixels). Determines how sensitive the script is in determining whether a line-break has occurred.
 
 		// Add a hidden drop-down menu to each links list (except those that already have one)
 		if (!persistent) {
@@ -551,12 +544,14 @@ function parseDocument($container) {
 			}
 			// Copy the list items to the dropdown
 			if (!copied1) {
-				var $clones1 = $linksFirst.clone();
+				var $clones1 = $linksFirst.clone(true);
 				$menuContents.prepend($clones1.addClass('clone clone-first').removeClass('leftside rightside'));
 
 				if ($this.hasClass('post-buttons')) {
-					$('.button', $menuContents).removeClass('button icon-button');
-					$('.responsive-menu-link', $menu).addClass('button icon-button').prepend('<span></span>');
+					$('.button', $menuContents).removeClass('button');
+					$('.sr-only', $menuContents).removeClass('sr-only');
+					$('.js-responsive-menu-link').addClass('button').addClass('button-icon-only');
+					$('.js-responsive-menu-link .icon').removeClass('fa-bars').addClass('fa-ellipsis-h');
 				}
 				copied1 = true;
 			}
@@ -610,12 +605,12 @@ function parseDocument($container) {
 		}
 
 		if (!persistent) {
-			phpbb.registerDropdown($menu.find('a.responsive-menu-link'), $menu.find('.dropdown'), false);
+			phpbb.registerDropdown($menu.find('a.js-responsive-menu-link'), $menu.find('.dropdown'), false);
 		}
 
 		// If there are any images in the links list, run the check again after they have loaded
 		$linksAll.find('img').each(function() {
-			$(this).load(function() {
+			$(this).on('load', function() {
 				check();
 			});
 		});
@@ -662,7 +657,7 @@ function parseDocument($container) {
 				$children = column.children(),
 				html = column.html();
 
-			if ($children.length == 1 && $children.text() == column.text()) {
+			if ($children.length === 1 && $children.text() === column.text()) {
 				html = $children.html();
 			}
 
@@ -704,8 +699,7 @@ function parseDocument($container) {
 			if (!$block.length) {
 				$this.find('dt > .list-inner').append('<div class="responsive-show" style="display:none;" />');
 				$block = $this.find('dt .responsive-show:last-child');
-			}
-			else {
+			} else {
 				first = ($.trim($block.text()).length === 0);
 			}
 
@@ -715,7 +709,7 @@ function parseDocument($container) {
 					children = column.children(),
 					html = column.html();
 
-				if (children.length == 1 && children.text() == column.text()) {
+				if (children.length === 1 && children.text() === column.text()) {
 					html = children.html();
 				}
 
@@ -744,7 +738,7 @@ function parseDocument($container) {
 		// Find each header
 		$th.each(function(column) {
 			var cell = $(this),
-				colspan = parseInt(cell.attr('colspan')),
+				colspan = parseInt(cell.attr('colspan'), 10),
 				dfn = cell.attr('data-dfn'),
 				text = dfn ? dfn : cell.text();
 
@@ -775,14 +769,14 @@ function parseDocument($container) {
 				cells = row.children('td'),
 				column = 0;
 
-			if (cells.length == 1) {
+			if (cells.length === 1) {
 				row.addClass('big-column');
 				return;
 			}
 
 			cells.each(function() {
 				var cell = $(this),
-					colspan = parseInt(cell.attr('colspan')),
+					colspan = parseInt(cell.attr('colspan'), 10),
 					text = $.trim(cell.text());
 
 				if (headersLength <= column) {
@@ -819,7 +813,7 @@ function parseDocument($container) {
 			$ul = $this.children(),
 			$tabs = $ul.children().not('[data-skip-responsive]'),
 			$links = $tabs.children('a'),
-			$item = $ul.append('<li class="tab responsive-tab" style="display:none;"><a href="javascript:void(0);" class="responsive-tab-link">&nbsp;</a><div class="dropdown tab-dropdown" style="display: none;"><div class="pointer"><div class="pointer-inner" /></div><ul class="dropdown-contents" /></div></li>').find('li.responsive-tab'),
+			$item = $ul.append('<li class="tab responsive-tab" style="display:none;"><a href="javascript:void(0);" class="responsive-tab-link">&nbsp;</a><div class="dropdown tab-dropdown" style="display: none;"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents" /></div></li>').find('li.responsive-tab'),
 			$menu = $item.find('.dropdown-contents'),
 			maxHeight = 0,
 			lastWidth = false,
@@ -858,19 +852,26 @@ function parseDocument($container) {
 				total = $availableTabs.length,
 				i, $tab;
 
-			for (i = total - 1; i >= 0; i --) {
+			for (i = total - 1; i >= 0; i--) {
 				$tab = $availableTabs.eq(i);
 				$menu.prepend($tab.clone(true).removeClass('tab'));
 				$tab.hide();
 				if ($this.height() <= maxHeight) {
-					$menu.find('a').click(function() { check(true); });
+					$menu.find('a').click(function() {
+						check(true);
+					});
 					return;
 				}
 			}
-			$menu.find('a').click(function() { check(true); });
+			$menu.find('a').click(function() {
+				check(true);
+			});
 		}
 
-		phpbb.registerDropdown($item.find('a.responsive-tab-link'), $item.find('.dropdown'), {visibleClass: 'activetab'});
+		var $tabLink = $item.find('a.responsive-tab-link');
+		phpbb.registerDropdown($tabLink, $item.find('.dropdown'), {
+			visibleClass: 'activetab'
+		});
 
 		check(true);
 		$(window).resize(check);
