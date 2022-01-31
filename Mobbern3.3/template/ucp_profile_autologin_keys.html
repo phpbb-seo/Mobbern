@@ -6,22 +6,31 @@
 <div class="panel">
 		<p>{L_PROFILE_AUTOLOGIN_KEYS}</p>
 		<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
+		{% DEFINE COLSPAN = 4 %}						  
 		<table class="table1">
 			<thead>
 				<tr>
+					{% EVENT ucp_profile_autologin_keys_thead_key_before %}															
 					<th>{L_LOGIN_KEY}</th>
+					{% EVENT ucp_profile_autologin_keys_thead_key_after %}														   
 					<th>{L_IP}</th>
 					<th>{L_LOGIN_TIME}</th>
+					{% EVENT ucp_profile_autologin_keys_thead_mark_before %}															 
 					<th class="mark">{L_MARK}</th>
+					{% EVENT ucp_profile_autologin_keys_thead_mark_after %}															
 				</tr>
 			</thead>
 			<tbody>
 			<!-- BEGIN sessions -->
 				<!-- IF sessions.S_ROW_COUNT is even --><tr class="bg1"><!-- ELSE --><tr class="bg2"><!-- ENDIF -->
+					{% EVENT ucp_profile_autologin_keys_tbody_key_before %}															
 					<td><label for="{sessions.KEY}">{sessions.KEY}</label></td>
+					{% EVENT ucp_profile_autologin_keys_tbody_key_after %}														   
 					<td style="text-align: center">{sessions.IP}</td>
 					<td style="text-align: center">{sessions.LOGIN_TIME}</td>
+					{% EVENT ucp_profile_autologin_keys_tbody_mark_before %}															 
 					<td style="text-align: center" class="mark"><input type="checkbox" name="keys[]" value="{sessions.KEY}" id="{sessions.KEY}" /></td>
+					{% EVENT ucp_profile_autologin_keys_tbody_mark_after %}															
 				</tr>
 			<!-- BEGINELSE -->
 				<tr><td colspan="4" class="bg1" style="text-align: center">{L_PROFILE_NO_AUTOLOGIN_KEYS}</td></tr>
