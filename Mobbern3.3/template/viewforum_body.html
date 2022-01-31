@@ -1,20 +1,16 @@
 <!-- INCLUDE overall_header.html -->
-
-<h2 class="forum-title">
-  <!-- EVENT viewforum_forum_name_prepend -->
-
-  <a href="{U_VIEW_FORUM}">{FORUM_NAME}</a>
-
-  <!-- EVENT viewforum_forum_name_append -->
-
-  <!-- IF FORUM_DESC or MODERATORS or U_MCP -->
-    <!-- IF FORUM_DESC -->
+<!-- EVENT viewforum_forum_title_before -->
+<h2 class="forum-title"><!-- EVENT viewforum_forum_name_prepend --><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a><!-- EVENT viewforum_forum_name_append --></h2>
+<!-- EVENT viewforum_forum_title_after -->
+<!-- IF FORUM_DESC or MODERATORS or U_MCP -->
+  
+  <!-- IF FORUM_DESC -->
     <div class="subheader">{FORUM_DESC}<br /></div>
     <!-- ENDIF -->
 
     <!-- IF MODERATORS -->
     <div class="subheader">
-    <!-- IF S_SINGLE_MODERATOR -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF -->
+	<!-- IF MODERATORS -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF -->
     {L_COLON} {MODERATORS}
     </div>
     <!-- ENDIF -->
@@ -168,6 +164,7 @@
 
 <!-- ENDIF -->
 
+<!-- EVENT viewforum_body_topic_row_before -->											  
 
 
 <!-- BEGIN topicrow -->
@@ -316,11 +313,11 @@
   <!-- IF S_IS_POSTABLE -->
   <div class="panel panel-default panel-material">
     <div class="panel-heading">
-    <h3>Sorry!</h3>
+    <h3>{{ lang(S_SORT_DAYS ? 'NO_TOPICS_TIME_FRAME' : 'NO_TOPICS') }}</h3>
     </div>
-    
+ 	<!-- ELSE IF not S_HAS_SUBFORUM -->   
     <div class="panel-body">
-    <p>{L_NO_TOPICS}</p>
+    <p>{L_NO_FORUMS_IN_CATEGORY}</p>
     </div>
 
   </div>
@@ -401,7 +398,7 @@
 <!-- ENDIF -->
 
 
-
+{% EVENT viewforum_body_online_list_before %}
 <!-- IF S_DISPLAY_ONLINE_LIST and S_DISPLAY_POST_INFO -->
   <div id="forum-stats" class="viewforum-stats">
 
