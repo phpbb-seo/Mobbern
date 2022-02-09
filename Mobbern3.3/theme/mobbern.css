@@ -2671,7 +2671,7 @@ h1,h2,h3,h4,h5,h6, .header, .nav.nav-tabs, #tabs { font-family: 'Roboto Slab', s
 .rtl .profile-contact .dropdown-menu { left: auto; right: 0 }
 .rtl .pagination { margin-left: 0; margin-right: 5px; }
 .rtl ul.topiclist .collapse-button { float: left; margin-right: 0; margin-left: 15px;}
-.rtl .postbody ul.profile-icons { margin-right: 25px }
+.rtl .postbody ul.profile-icons { margin-right: 25px; right: 0; }
 .rtl .navbar.beadcrumb ul.navlinks { float: right; }
 .rtl .navbar.beadcrumb ul.navbuttons { float: left; }
 .rtl #cp-menu:after { left: auto; right: 19%; }
@@ -2684,6 +2684,16 @@ h1,h2,h3,h4,h5,h6, .header, .nav.nav-tabs, #tabs { font-family: 'Roboto Slab', s
 .rtl div.topic-actions>div.float-right { float: left; }
 .rtl dl.icon dt { padding-right: 57px;}
 .rtl .nav > li.login-box-toggle > .dropdown-menu, .nav > li.member-menu > .dropdown-menu, li.controls-btn > .dropdown-menu {  right: auto;  left: 0;}
+.rtl .topic-tools > .dropdown-menu, .quickmod-menu > .dropdown-menu {  right: auto;  left: 0;}
+@media (min-width: 701px) {
+	.rtl .postbody {
+		margin-right: 0;
+		margin-left: 0 !important;
+	}
+}
+.rtl .post-buttons {  float: none !important;}
+.rtl #tabs a {  float: right;}
+.rtl #smiley-box {  float: left;}
 
 /* TRANSITIONS
 --------------------------------------------- */
