@@ -2683,6 +2683,7 @@ h1,h2,h3,h4,h5,h6, .header, .nav.nav-tabs, #tabs { font-family: 'Roboto Slab', s
 .rtl div.topic-actions>div.float-left .forum-info-text { margin-right: 0; margin-left: 20px; }
 .rtl div.topic-actions>div.float-right { float: left; }
 .rtl dl.icon dt { padding-right: 57px;}
+.rtl .nav > li.login-box-toggle > .dropdown-menu, .nav > li.member-menu > .dropdown-menu, li.controls-btn > .dropdown-menu {  right: auto;  left: 0;}
 
 /* TRANSITIONS
 --------------------------------------------- */
