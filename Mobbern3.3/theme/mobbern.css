@@ -2661,7 +2661,7 @@ h1,h2,h3,h4,h5,h6, .header, .nav.nav-tabs, #tabs { font-family: 'Roboto Slab', s
 .rtl .footer-panel-body .icon { padding-right: 0; padding-left: 10px; }
 .rtl .footer-contact-options .icon,
 .rtl .footer-contact-options a .icon { float: right; }
-.rtl li.row dl.icon { background-position: 98% 50%; }
+.rtl li.row dl.icon { background-position: 99% 50%; }
 .rtl dl.icon i.icon { margin-left: 5px; }
 .rtl #forum-stats .float-left { width: 60%; }
 .rtl #forum-stats .float-right { width: 40%; }
@@ -2682,7 +2682,7 @@ h1,h2,h3,h4,h5,h6, .header, .nav.nav-tabs, #tabs { font-family: 'Roboto Slab', s
 .rtl div.topic-actions>div.float-left .buttons { float: right; margin-right: 0; margin-left: 20px; }
 .rtl div.topic-actions>div.float-left .forum-info-text { margin-right: 0; margin-left: 20px; }
 .rtl div.topic-actions>div.float-right { float: left; }
-
+.rtl dl.icon dt { padding-right: 57px;}
 
 /* TRANSITIONS
 --------------------------------------------- */
