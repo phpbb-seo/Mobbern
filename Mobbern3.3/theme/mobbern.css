@@ -141,7 +141,7 @@ html { -webkit-font-smoothing: antialiased; }
 body * { -webkit-backface-visibility: hidden; }
 
 .subheader {
-  font-size: 0.5em;
+  font-size: 1.5em;
   font-weight: 400;
   color: #888;
   margin-top: 5px;
