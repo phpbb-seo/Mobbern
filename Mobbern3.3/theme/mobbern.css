@@ -2694,6 +2694,7 @@ h1,h2,h3,h4,h5,h6, .header, .nav.nav-tabs, #tabs { font-family: 'Roboto Slab', s
 .rtl .post-buttons {  float: none !important;}
 .rtl #tabs a {  float: right;}
 .rtl #smiley-box {  float: left;}
+.rtl ul.topiclist dt, .rtl li.header dt {  margin-left: 0px !important;}
 
 /* TRANSITIONS
 --------------------------------------------- */
