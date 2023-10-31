@@ -1,9 +1,9 @@
 <fieldset class="fields1">
   <!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
 
-	{% EVENT posting_editor_topic_icons_before %}											  
-												 
-  <!-- IF S_SHOW_TOPIC_ICONS or S_SHOW_PM_ICONS -->																																																																																																		 
+	{% EVENT posting_editor_topic_icons_before %}
+
+  <!-- IF S_SHOW_TOPIC_ICONS or S_SHOW_PM_ICONS -->
   <dl class="post-icons">
     <dt><label for="icon" class="no-padding">{L_ICON}{L_COLON}</label></dt>
     <dd>
@@ -23,17 +23,17 @@
       <img src="{topic_icon.ICON_IMG}" width="{topic_icon.ICON_WIDTH}" height="{topic_icon.ICON_HEIGHT}" alt="" title="" />
       </label>
       <!-- END topic_icon -->
-			{% EVENT posting_editor_topic_icons_append %}	  
+			{% EVENT posting_editor_topic_icons_append %}
     </dd>
   </dl>
   <!-- ENDIF -->
 
-	{% EVENT posting_editor_topic_icons_after %}												  
+	{% EVENT posting_editor_topic_icons_after %}
   <!-- IF not S_PRIVMSGS and S_DISPLAY_USERNAME -->
   <dl style="clear: left;">
-    <dt><label for="username">{L_USERNAME}{L_COLON}</label></dt>												
-    <dd><input type="text" tabindex="1" name="username" id="username" size="25" value="{USERNAME}" class="inputbox autowidth" /></dd>											      
-  </dl>			   
+    <dt><label for="username">{L_USERNAME}{L_COLON}</label></dt>
+    <dd><input type="text" tabindex="1" name="username" id="username" size="25" value="{USERNAME}" class="inputbox autowidth" /></dd>
+  </dl>
   <!-- ENDIF -->
 
   <!-- EVENT posting_editor_subject_before -->
@@ -44,7 +44,7 @@
   <dl style="clear: left;">
     <dt><label for="subject">{L_SUBJECT}{L_COLON}</label></dt>
     <dd>
-			<!-- EVENT posting_editor_subject_prepend -->	
+			<!-- EVENT posting_editor_subject_prepend -->
 	<input type="text" name="subject" id="subject" size="45" maxlength="<!-- IF S_NEW_MESSAGE -->120<!-- ELSE -->124<!-- ENDIF -->" tabindex="2" value="{SUBJECT}{DRAFT_SUBJECT}" class="inputbox full-width" />
 				<!-- EVENT posting_editor_subject_append -->
 	</dd>
@@ -79,7 +79,9 @@
         {BBCODE_STATUS}<br />
         <!-- IF S_BBCODE_ALLOWED -->
           {IMG_STATUS}<br />
+          <!-- IF S_BBCODE_FLASH -->
           {FLASH_STATUS}<br />
+          <!-- ENDIF -->
           {URL_STATUS}<br />
         <!-- ENDIF -->
         {SMILIES_STATUS}
@@ -89,11 +91,11 @@
 
       <!-- IF S_EDIT_DRAFT || S_DISPLAY_REVIEW -->
         <!-- IF S_DISPLAY_REVIEW --><hr /><!-- ENDIF -->
-        
+
         <!-- IF S_EDIT_DRAFT -->
           <a href="{S_UCP_ACTION}"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;{L_BACK_TO_DRAFTS}</a>
         <!-- ENDIF -->
-        
+
         <!-- IF S_DISPLAY_REVIEW -->
           <a href="#review"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;{L_TOPIC_REVIEW}</a>
         <!-- ENDIF -->
@@ -121,7 +123,7 @@
     <fieldset class="submit-buttons">
       {S_HIDDEN_ADDRESS_FIELD}
       {S_HIDDEN_FIELDS}
-      
+
       <!-- IF S_HAS_DRAFTS -->
       <input type="submit" accesskey="d" tabindex="8" name="load" value="{L_LOAD_DRAFT}" class="button2" onclick="load_draft = true;" />&nbsp;
       <!-- ENDIF -->
@@ -162,7 +164,7 @@
           </a>
         </li>
       <!-- ENDIF -->
-				<!-- EVENT posting_editor_add_panel_tab -->	  
+				<!-- EVENT posting_editor_add_panel_tab -->
     </ul>
   </div>
   <!-- ENDIF -->
@@ -226,17 +228,18 @@
       </dl>
       <!-- ENDIF -->
 
-      <!-- IF S_SOFTDELETE_ALLOWED or S_DELETE_ALLOWED -->
-        <hr class="dashed" />
+      {% if S_SOFTDELETE_ALLOWED || S_DELETE_ALLOWED %}
+				<hr class="dashed">
         <dl>
-          <dt><label for="delete">{L_DELETE_POST}{L_COLON}</label></dt>
-          <dd><label for="delete"><input type="checkbox" name="delete" id="delete" {S_SOFTDELETE_CHECKED} /> {L_DELETE_POST_WARN}</label></dd>
-          
-          <!-- IF S_DELETE_ALLOWED and S_SOFTDELETE_ALLOWED -->
-            <dd><label for="delete_permanent"><input type="checkbox" name="delete_permanent" id="delete_permanent" /> {L_DELETE_POST_PERMANENTLY}</label></dd>
-          <!-- ENDIF -->
+          <dt><label for="delete">{{ lang('DELETE_POST') ~ lang('COLON') }}</label></dt>
+					{% if S_SOFTDELETE_ALLOWED %}
+						<dd><label for="delete"><input type="checkbox" name="delete" id="delete" {{ S_SOFTDELETE_CHECKED }}> {{ lang('DELETE_POST_WARN') }}</label></dd>
+					{% endif %}
+					{% if S_DELETE_ALLOWED %}
+						<dd><label for="delete_permanent"><input type="checkbox" name="delete_permanent" id="delete_permanent"> {{ lang('DELETE_POST_PERMANENTLY') }}</label></dd>
+					{% endif %}
         </dl>
-      <!-- ENDIF -->
+      {% endif %}
 
       <!-- IF S_EDIT_REASON -->
       <dl>

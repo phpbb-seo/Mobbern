@@ -40,6 +40,7 @@
 						<!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF --><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a>
 						<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a> <!-- ENDIF -->
 						<!-- IF topicrow.S_TOPIC_REPORTED --><a href="{topicrow.U_MCP_REPORT}">{REPORTED_IMG}</a><!-- ENDIF --><br />
+						{% EVENT ucp_main_bookmarks_topic_title_after %}
 						<!-- IF .topicrow.pagination -->
 						<div class="pagination">
 							<ul>
@@ -80,9 +81,9 @@
 		<ul class="linklist">
 			<li class="pagination">
 				{TOTAL_TOPICS}
-				<!-- IF .pagination --> 
+				<!-- IF .pagination -->
 					<!-- INCLUDE pagination.html -->
-				<!-- ELSE --> 
+				<!-- ELSE -->
 					 &bull; {PAGE_NUMBER}
 				<!-- ENDIF -->
 			</li>
@@ -100,10 +101,10 @@
 
 <!-- IF .topicrow and not S_NO_DISPLAY_BOOKMARKS -->
 	<fieldset class="display-actions mark-opts">
-		
+
 		<a href="#" class="button2" onclick="marklist('ucp', '', true); return false;">
 		<i class="fa fa-check-square-o"></i>&nbsp;&nbsp;{L_MARK_ALL}</a>
-		
+
 		<a href="#" class="button2" onclick="marklist('ucp', '', false); return false;">
 		<i class="fa fa-square-o"></i>&nbsp;&nbsp;{L_UNMARK_ALL}</a>
 

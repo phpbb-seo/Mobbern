@@ -2,7 +2,7 @@
 
 <h2>{PAGE_TITLE}</h2>
 
-<!-- EVENT mcp_front_latest_unapproved_before -->												 
+<!-- EVENT mcp_front_latest_unapproved_before -->
 <!-- IF S_SHOW_UNAPPROVED -->
 
 	<div class="panel posts-queue">
@@ -23,6 +23,7 @@
 						<dl>
 							<dt><div class="list-inner">{L_VIEW_DETAILS}</div></dt>
 							<dd class="moderation"><span>{L_TOPIC} &amp; {L_FORUM}</span></dd>
+							<dd class="mark">{{ lang('MARK') }}</dd>
 						</dl>
 					</li>
 				</ul>
@@ -65,7 +66,7 @@
 				<input class="button2" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />
 
 				<input class="button1" type="submit" name="action[approve]" value="{L_APPROVE}" />
-				
+
 			</fieldset>
 			<!-- ENDIF -->
 
@@ -75,7 +76,7 @@
 
 <!-- ENDIF -->
 
-<!-- EVENT mcp_front_latest_reported_before -->											   
+<!-- EVENT mcp_front_latest_reported_before -->
 
 <!-- IF S_SHOW_REPORTS -->
 
@@ -124,7 +125,7 @@
 
 <!-- ENDIF -->
 
-<!-- EVENT mcp_front_latest_reported_pms_before -->												   
+<!-- EVENT mcp_front_latest_reported_pms_before -->
 
 <!-- IF S_SHOW_PM_REPORTS -->
 	<div class="panel panel-default panel-mcp-pmreports">
@@ -173,7 +174,7 @@
 
 <!-- ENDIF -->
 
-<!-- EVENT mcp_front_latest_logs_before -->									   
+<!-- EVENT mcp_front_latest_logs_before -->
 
 <!-- IF S_SHOW_LOGS -->
 	<div class="panel panel-default panel-mcp-logs">
@@ -205,7 +206,7 @@
 			<td><span><!-- IF log.U_VIEWLOGS --><a href="{log.U_VIEWLOGS}">{L_VIEW_TOPIC_LOGS}</a><!-- ENDIF -->&nbsp;</span></td>
 			<td><span>{log.TIME}</span></td>
 		</tr>
-		
+
 		<!-- BEGINELSE -->
 		<tr>
 			<td colspan="6">{L_NO_ENTRIES}</td>
@@ -219,5 +220,5 @@
 	</div><!-- /.panel-mcp-logs -->
 <!-- ENDIF -->
 
-<!-- EVENT mcp_front_latest_logs_after -->										  
+<!-- EVENT mcp_front_latest_logs_after -->
 <!-- INCLUDE mcp_footer.html -->

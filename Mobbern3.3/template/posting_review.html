@@ -10,7 +10,9 @@
 		<!-- BEGIN post_review_row -->
 
 			<!-- IF post_review_row.S_IGNORE_POST -->
-			<div class="post bg3 post-ignore"> {post_review_row.L_IGNORE_POST}
+			<div class="post bg3 post-ignore">
+				{post_review_row.L_IGNORE_POST}<br>
+				<a class="display_post_review" href="{{ post_review_row.U_MINI_POST }}">{{ lang('POST_DISPLAY') }}</a>
 			<!-- ELSE -->
 			<div class="post <!-- IF post_review_row.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
 			<!-- ENDIF -->
@@ -26,7 +28,7 @@
 						{L_POST_BY_AUTHOR}<!-- EVENT posting_review_row_post_author_username_prepend -->
 						<strong>  {post_review_row.POST_AUTHOR_FULL}</strong> &raquo; {post_review_row.POST_DATE}
 					</p>
-					
+
 					<div class="content">{post_review_row.MESSAGE}</div>
 
 					<!-- IF post_review_row.S_HAS_ATTACHMENTS -->
@@ -40,7 +42,7 @@
 				</div><!-- /.post -->
 
 			</div><!-- /.postbody -->
-			
+
 		<!-- END post_review_row -->
 	</div>
 

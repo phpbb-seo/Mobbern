@@ -4,7 +4,7 @@
       <span class="right-box text-xs"><i class="fa fa-sort"></i>&nbsp; <a href="#review" onclick="viewableArea(getElementById('topicreview'), true); var rev_text = getElementById('review').getElementsByTagName('a').item(0).firstChild; if (rev_text.data == '{LA_EXPAND_VIEW}'){rev_text.data = '{LA_COLLAPSE_VIEW}'; } else if (rev_text.data == '{LA_COLLAPSE_VIEW}'){rev_text.data = '{LA_EXPAND_VIEW}'};">{L_EXPAND_VIEW}</a></span>
       <i class="fa fa-history"></i> {L_MESSAGE_HISTORY}{L_COLON}
     </h3>
-<!-- EVENT ucp_pm_history_review_before -->	
+<!-- EVENT ucp_pm_history_review_before -->
   </div>
 
   <div class="panel-body">
@@ -23,11 +23,9 @@
 
           <div class="postbody-header">
             <h3>
-              <!-- IF history_row.U_QUOTE or history_row.MESSAGE_AUTHOR_QUOTE -->
                 <a <!-- IF history_row.U_QUOTE -->href="{history_row.U_QUOTE}"<!-- ELSE -->href="#postingbox" onclick="addquote({history_row.MSG_ID}, '{history_row.MESSAGE_AUTHOR_QUOTE}', '{LA_WROTE}');"<!-- ENDIF --> title="{L_QUOTE} {history_row.MESSAGE_AUTHOR}" class="button icon-button quote-icon">
                   <i class="fa fa-quote-left" title="{L_QUOTE} {history_row.MESSAGE_AUTHOR}"></i>
                 </a>&nbsp;
-              <!-- ENDIF -->
               <a href="{history_row.U_VIEW_MESSAGE}" <!-- IF history_row.S_CURRENT_MSG -->class="current"<!-- ENDIF -->>{history_row.SUBJECT}</a>
             </h3>
 			<!-- EVENT ucp_pm_history_post_buttons_list_before -->

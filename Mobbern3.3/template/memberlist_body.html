@@ -22,7 +22,7 @@
 		<!-- IF U_MANAGE -->
 			<p class="right responsive-center manage rightside"><a href="{U_MANAGE}">{L_MANAGE_GROUP}</a></p>
 		<!-- ENDIF -->
-		<p>{GROUP_DESC} {GROUP_TYPE}</p>
+		<div class="group-description">{GROUP_DESC} {GROUP_TYPE}</div>
 
 		{% EVENT memberlist_body_group_desc_after %}
 
@@ -40,7 +40,7 @@
 		</p>
 
 	<!-- ELSE -->
-		{% EVENT memberlist_body_page_title_before %}											   
+		{% EVENT memberlist_body_page_title_before %}
 		<h2 class="solo">{PAGE_TITLE}<!-- IF SEARCH_WORDS -->{L_COLON} <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>
 
 		<div class="action-bar top">
@@ -58,13 +58,13 @@
 				<!-- END first_char -->
 				</strong>
 			</div>
-		
+
 			<div class="float-right">
 				<div class="pagination">
 					{TOTAL_USERS}
-					<!-- IF .pagination --> 
+					<!-- IF .pagination -->
 						<!-- INCLUDE pagination.html -->
-					<!-- ELSE --> 
+					<!-- ELSE -->
 						 &bull; {PAGE_NUMBER}
 					<!-- ENDIF -->
 				</div>
@@ -84,7 +84,7 @@
 			<th class="info"><!-- BEGIN custom_fields --><!-- IF not custom_fields.S_FIRST_ROW -->{L_COMMA_SEPARATOR} <!-- ENDIF -->{custom_fields.PROFILE_FIELD_NAME}<!-- END custom_fields --></th>
 			<th class="joined"><a href="{U_SORT_JOINED}#memberlist">{L_JOINED}</a></th>
 			<!-- IF U_SORT_ACTIVE --><th class="active"><a href="{U_SORT_ACTIVE}#memberlist">{L_LAST_ACTIVE}</a></th><!-- ENDIF -->
-			{% EVENT memberlist_body_memberlist_after %}											   
+			{% EVENT memberlist_body_memberlist_after %}
 		</tr>
 		</thead>
 		<tbody>
@@ -118,14 +118,14 @@
 			<th class="info"><!-- BEGIN custom_fields --><!-- IF not custom_fields.S_FIRST_ROW -->{L_COMMA_SEPARATOR} <!-- ENDIF -->{custom_fields.PROFILE_FIELD_NAME}<!-- END custom_fields --></th>
 			<th class="joined"><a href="{U_SORT_JOINED}#memberlist">{L_JOINED}</a></th>
 			<!-- IF U_SORT_ACTIVE --><th class="active"><a href="{U_SORT_ACTIVE}#memberlist">{L_LAST_ACTIVE}</a></th><!-- ENDIF -->
-			{% EVENT memberlist_body_leaders_set_after %}												
+			{% EVENT memberlist_body_leaders_set_after %}
 	<!-- ELSEIF S_SHOW_GROUP -->
 		<th class="name">{L_GROUP_MEMBERS}</th>
 		<th class="posts">{L_POSTS}</th>
 		<th class="info"><!-- BEGIN custom_fields --><!-- IF not custom_fields.S_FIRST_ROW -->{L_COMMA_SEPARATOR} <!-- ENDIF -->{custom_fields.PROFILE_FIELD_NAME}<!-- END custom_fields --></th>
 		<th class="joined">{L_JOINED}</th>
 		<!-- IF U_SORT_ACTIVE --><th class="active">{L_LAST_ACTIVE}</th><!-- ENDIF -->
-		{% EVENT memberlist_body_show_group_after %}											  
+		{% EVENT memberlist_body_show_group_after %}
 	<!-- ENDIF -->
 	</tr>
 	</thead>
@@ -143,10 +143,10 @@
 			{%- else -%}
 				&nbsp;
 			{%- endfor -%}
-		</td>											   
+		</td>
 		<td>{memberrow.JOINED}</td>
 		<!-- IF S_VIEWONLINE --><td>{memberrow.LAST_ACTIVE}&nbsp;</td><!-- ENDIF -->
-		{% EVENT memberlist_body_memberrow_after %}											 
+		{% EVENT memberlist_body_memberrow_after %}
 	</tr>
 		<!-- BEGINELSE -->
 	<tr class="bg1">
@@ -192,9 +192,9 @@
 	<div class="float-right">
 		<div class="pagination">
 			{TOTAL_USERS}
-			<!-- IF .pagination --> 
+			<!-- IF .pagination -->
 				<!-- INCLUDE pagination.html -->
-			<!-- ELSE --> 
+			<!-- ELSE -->
 				 &bull; {PAGE_NUMBER}
 			<!-- ENDIF -->
 		</div>
@@ -202,7 +202,7 @@
 </div><!-- /.action-bar -->
 
 
-{% EVENT memberlist_body_page_footer_before %}											  
+{% EVENT memberlist_body_page_footer_before %}
 
 <!-- IF S_IN_SEARCH_POPUP -->
 	<!-- INCLUDE simple_footer.html -->

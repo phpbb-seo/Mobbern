@@ -48,7 +48,7 @@
 
   <!-- IF MBRN_ADS_INPAGE -->
     <div class="inpage-adspace adspace">
-    <!-- INCLUDE m_ads_code_inpage_bottom.html -->  
+    <!-- INCLUDE m_ads_code_inpage_bottom.html -->
     </div>
   <!-- ENDIF -->
 
@@ -118,7 +118,7 @@
 
 
 <div class="hidden">
-  <!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
+  {% if not S_IS_BOT %}{{ RUN_CRON_TASK }}{% endif %}
 </div>
 
 
@@ -132,13 +132,13 @@
 <!-- INCLUDEJS ajax.js -->
 <!-- IF S_COOKIE_NOTICE -->
 	<script src="{T_ASSETS_PATH}/cookieconsent/cookieconsent.min.js?assets_version={T_ASSETS_VERSION}"></script>
-<!-- ENDIF -->					 
-																				 
+<!-- ENDIF -->
 
-							 
-																					 
 
-					  
+
+
+
+
 	<script>
 		if (typeof window.cookieconsent === "object") {
 			window.addEventListener("load", function(){
@@ -183,7 +183,7 @@
 $(document).ready(function(){
 <!-- IF MBRN_SCROLL_CUSTOM == null || MBRN_SCROLL_CUSTOM -->
 
-  // jQuery Nicescroll 
+  // jQuery Nicescroll
   if( jQuery().niceScroll ) {
     var params = { <!-- IF not MBRN_SCROLL_SMOOTH && MBRN_SCROLL_SMOOTH != null -->scrollspeed:2000,mousescrollstep:8*4,smoothscroll:false <!-- ENDIF --> };
     $("html").niceScroll(params);

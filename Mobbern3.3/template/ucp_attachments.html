@@ -5,17 +5,17 @@
 <h2>{L_TITLE}</h2>
 
 <div class="panel panel-ucp-attachments">
-	
+
 	<p>{L_ATTACHMENTS_EXPLAIN}</p>
 
 	<!-- IF .attachrow -->
-		<div class="action-bar top">
+		<div class="action-bar bar-top">
 			<ul class="linklist">
 				<li class="pagination">
 					{NUM_ATTACHMENTS}
-					<!-- IF .pagination --> 
+					<!-- IF .pagination -->
 						<!-- INCLUDE pagination.html -->
-					<!-- ELSE --> 
+					<!-- ELSE -->
 						 &bull; {PAGE_NUMBER}
 					<!-- ENDIF -->
 				</li>
@@ -55,9 +55,9 @@
 		</ul>
 
 		<div class="forum-opts info-block margin-v-20px">
-			<!-- INCLUDE display_options.html -->		
+			<!-- INCLUDE display_options.html -->
 			<fieldset class="display-options">
-				<label for="sk">{L_SORT_BY}{L_COLON} <select name="sk" id="sk">{S_SORT_OPTIONS}</select></label> 
+				<label for="sk">{L_SORT_BY}{L_COLON} <select name="sk" id="sk">{S_SORT_OPTIONS}</select></label>
 				<label><select name="sd" id="sd">{S_ORDER_SELECT}</select></label>
 				<input class="button2" type="submit" name="sort" value="&#xf054;" />
 				{S_FORM_TOKEN}
@@ -66,13 +66,13 @@
 
 		<hr />
 
-		<div class="action-bar bottom">
+		<div class="action-bar bar-bottom">
 			<ul class="linklist">
 				<li class="pagination">
-					{TOTAL_ATTACHMENTS} {L_TITLE}
-					<!-- IF .pagination --> 
+					{NUM_ATTACHMENTS}
+					<!-- IF .pagination -->
 						<!-- INCLUDE pagination.html -->
-					<!-- ELSE --> 
+					<!-- ELSE -->
 						 &bull; {PAGE_NUMBER}
 					<!-- ENDIF -->
 				</li>
@@ -88,7 +88,7 @@
 
 
 <!-- IF S_ATTACHMENT_ROWS -->
-	<fieldset class="display-actions">	
+	<fieldset class="display-actions">
 
 		<a href="#" class="button2" onclick="marklist('ucp', 'attachment', true); return false;">
 		<i class="fa fa-check-square-o"></i>&nbsp;&nbsp;{L_MARK_ALL}</a>

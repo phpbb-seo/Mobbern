@@ -61,7 +61,7 @@
       <form method="get" id="topic-search" action="{S_SEARCHBOX_ACTION}">
       <fieldset>
         <input class="inputbox search tiny"  type="search" name="keywords" id="search_keywords" size="20" placeholder="{L_SEARCH_TOPIC}" />
-        
+
         <input class="button2" type="submit" value="&#xf002;" title="{L_SEARCH}" />
 
         {S_SEARCH_LOCAL_HIDDEN_FIELDS}
@@ -90,7 +90,7 @@
         <div class="panel-heading">
           <h3 class="poll-title">
           <!-- EVENT viewtopic_body_poll_question_prepend -->
-          
+
           {POLL_QUESTION}
 
           <!-- EVENT viewtopic_body_poll_question_append -->
@@ -157,7 +157,7 @@
 
 
 <div class="posts-wrapper">
-<!-- EVENT viewtopic_body_poll_after -->												
+<!-- EVENT viewtopic_body_poll_after -->
   <!-- BEGIN postrow -->
 
   <!-- EVENT viewtopic_body_postrow_post_before -->
@@ -197,7 +197,7 @@
       <!-- IF postrow.U_SEARCH !== '' --><a href="{postrow.U_SEARCH}"><!-- ENDIF -->
       {postrow.POSTER_POSTS}
       <!-- IF postrow.U_SEARCH !== '' --></a><!-- ENDIF --></dd><!-- ENDIF -->
-      
+
       <!-- IF postrow.POSTER_JOINED --><dd class="profile-joined"><strong>{L_JOINED}{L_COLON}</strong> {postrow.POSTER_JOINED}</dd><!-- ENDIF -->
 
       <!-- IF postrow.POSTER_WARNINGS --><dd class="profile-warnings"><strong>{L_WARNINGS}{L_COLON}</strong> {postrow.POSTER_WARNINGS}</dd><!-- ENDIF -->
@@ -222,7 +222,7 @@
 
       <!-- IF not S_IS_BOT and .postrow.contact -->
         <dd class="profile-contact">
-          
+
           <div class="dropdown">
             <a href="#" class="dropdown-trigger" data-toggle="dropdown" title="{postrow.CONTACT_USER}">
             <i class="fa fa-envelope"></i>&nbsp; {postrow.CONTACT_USER} <span class="caret"></span>
@@ -263,14 +263,14 @@
 
         <!-- IF postrow.S_POST_DELETED -->
           <div class="ignore" id="post_hidden{postrow.POST_ID}">
-            {postrow.L_POST_DELETED_MESSAGE}<br />
-            {postrow.L_POST_DISPLAY}
+            {postrow.L_POST_DELETED_MESSAGE}<br>
+						<a class="display_post" data-post-id="{{ postrow.POST_ID }}" href="{{ postrow.U_MINI_POST_VIEW }}">{{ lang('POST_DISPLAY') }}</a>
           </div>
 
         <!-- ELSEIF postrow.S_IGNORE_POST -->
           <div class="ignore" id="post_hidden{postrow.POST_ID}">
-            {postrow.L_IGNORE_POST}<br />
-            {postrow.L_POST_DISPLAY}
+            {postrow.L_IGNORE_POST}<br>
+						<a class="display_post" data-post-id="{{ postrow.POST_ID }}" href="{{ postrow.U_MINI_POST_VIEW }}">{{ lang('POST_DISPLAY') }}</a>
           </div>
         <!-- ENDIF -->
 
@@ -332,7 +332,7 @@
        </p>
        <!-- ENDIF -->
 
-
+       {% EVENT viewtopic_body_postrow_content_before %}
 
        <div class="content">{postrow.MESSAGE}</div>
 
@@ -372,7 +372,7 @@
 			{% EVENT viewtopic_body_postrow_signature_before %}
 				{% if postrow.SIGNATURE %}<div id="sig{{ postrow.POST_ID }}" class="signature">{{ postrow.SIGNATURE }}</div>{% endif %}
 			{% EVENT viewtopic_body_postrow_signature_after %}
-			
+
        <!-- EVENT viewtopic_body_postrow_post_content_footer -->
 
       </div><!-- /.postbody-container -->
@@ -467,7 +467,7 @@
         <!-- ENDIF -->
       <!-- ENDIF -->
     </div>
-  </div><!-- /.float-left --> 
+  </div><!-- /.float-left -->
 
 
   <div class="float-right">
@@ -511,7 +511,7 @@
   <div class="panel panel-default float-left stat-block online-list">
     <div class="panel-heading">
       <h3>
-      <i class="fa fa-question-circle"></i> 
+      <i class="fa fa-question-circle"></i>
       <!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a>
       <!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF -->
       </h3>
@@ -531,7 +531,7 @@
     </div>
 
     <div class="panel-body">
-    
+
     <!-- IF U_FORUM_RULES -->
       <a href="{U_FORUM_RULES}">{L_FORUM_RULES}</a>
     <!-- ELSE -->
@@ -553,7 +553,7 @@
     <div class="panel panel-default full-width">
     <div class="panel-heading">
       <h3>
-      <i class="fa fa-question-circle"></i> 
+      <i class="fa fa-question-circle"></i>
       <!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a>
       <!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF -->
       </h3>
